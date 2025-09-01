@@ -1,0 +1,192 @@
+@import "tailwindcss";
+
+/* Custom styles for portfolio */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: white;
+    color: #000000;
+    font-family: serif;
+    transition: all 0.2s ease;
+  }
+
+  body.dark {
+    background-color: #000000;
+    color: #ffffff;
+  }
+}
+
+@layer components {
+  .section-title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 1rem;
+  }
+
+  .dark .section-title {
+    color: #ffffff;
+  }
+
+  .card {
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .dark .card {
+    background-color: #111111;
+    border-color: #333333;
+  }
+
+  .btn-primary {
+    color: #2563eb;
+    text-decoration: underline;
+  }
+
+  .btn-primary:hover {
+    color: #1d4ed8;
+  }
+
+  .dark .btn-primary {
+    color: #60a5fa;
+  }
+
+  .dark .btn-primary:hover {
+    color: #93c5fd;
+  }
+
+  .nav-link {
+    color: #000000;
+    text-decoration: underline;
+  }
+
+  .nav-link:hover {
+    color: #4b5563;
+  }
+
+  .dark .nav-link {
+    color: #ffffff;
+  }
+
+  .dark .nav-link:hover {
+    color: #d1d5db;
+  }
+
+  .experience-item {
+    margin-bottom: 2rem;
+  }
+
+  .experience-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 0.5rem;
+  }
+
+  .dark .experience-title {
+    color: #ffffff;
+  }
+
+  .experience-org {
+    color: #000000;
+    margin-bottom: 0.25rem;
+  }
+
+  .dark .experience-org {
+    color: #ffffff;
+  }
+
+  .experience-date {
+    color: #000000;
+    margin-bottom: 0.5rem;
+  }
+
+  .dark .experience-date {
+    color: #ffffff;
+  }
+
+  .experience-bullet {
+    margin-left: 1rem;
+    margin-bottom: 0.25rem;
+    color: #000000;
+  }
+
+  .dark .experience-bullet {
+    color: #ffffff;
+  }
+
+  .theme-toggle {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+    color: #000000;
+  }
+
+  .theme-toggle:hover {
+    background-color: #f3f4f6;
+  }
+
+  .dark .theme-toggle {
+    border-color: #404040;
+    color: #ffffff;
+    background-color: #111111;
+  }
+
+  .dark .theme-toggle:hover {
+    background-color: #1a1a1a;
+  }
+
+  .section-border {
+    border-color: #e5e7eb;
+  }
+
+  .dark .section-border {
+    border-color: #333333;
+  }
+
+  .contact-card {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    transition: all 0.2s ease;
+  }
+
+  .dark .contact-card {
+    background-color: #111111;
+    border-color: #333333;
+  }
+
+  .contact-card:hover {
+    border-color: #cbd5e1;
+  }
+
+  .dark .contact-card:hover {
+    border-color: #404040;
+  }
+
+  /* Ensure all text elements have proper contrast */
+  p, h1, h2, h3, h4, h5, h6, li, span, div {
+    color: #000000;
+  }
+
+  .dark p, .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6, .dark li, .dark span, .dark div {
+    color: #ffffff;
+  }
+
+  /* Override any gray text colors */
+  .text-gray-600, .text-gray-700 {
+    color: #000000 !important;
+  }
+
+  .dark .text-gray-600, .dark .text-gray-700 {
+    color: #ffffff !important;
+  }
+}

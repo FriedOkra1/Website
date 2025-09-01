@@ -1,0 +1,93 @@
+---
+import '../styles/global.css';
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Welcome to my portfolio website" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <nav class="py-4 border-b section-border">
+      <div class="max-w-4xl mx-auto px-4">
+        <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 items-start sm:items-center justify-between">
+          <div class="flex flex-wrap gap-4 sm:gap-6">
+            <a href="/" class="nav-link font-bold text-lg">Ayush Madhav Kumar</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#education" class="nav-link">Education</a>
+            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#research" class="nav-link">Research & Projects</a>
+            <a href="#skills" class="nav-link">Skills & Awards</a>
+            <a href="#leadership" class="nav-link">Leadership</a>
+            <a href="#contact" class="nav-link">Contact</a>
+          </div>
+          <button id="theme-toggle" class="theme-toggle mt-2 sm:mt-0">
+            <span id="theme-text">Dark</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <slot />
+    </main>
+
+    <script>
+      // Theme toggle functionality
+      const themeToggle = document.getElementById('theme-toggle');
+      const themeText = document.getElementById('theme-text');
+      const body = document.body;
+
+      // Check for saved theme preference or default to light mode
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      if (savedTheme === 'dark' && themeText) {
+        body.classList.add('dark');
+        themeText.textContent = 'Light';
+      } else if (themeText) {
+        themeText.textContent = 'Dark';
+      }
+
+      // Toggle theme
+      themeToggle?.addEventListener('click', () => {
+        body.classList.toggle('dark');
+        const isDark = body.classList.contains('dark');
+        
+        if (isDark && themeText) {
+          localStorage.setItem('theme', 'dark');
+          themeText.textContent = 'Light';
+        } else if (themeText) {
+          localStorage.setItem('theme', 'light');
+          themeText.textContent = 'Dark';
+        }
+      });
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', (e) => {
+          e.preventDefault();
+          const href = anchor.getAttribute('href');
+          if (href) {
+            const target = document.querySelector(href);
+            if (target) {
+              target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              });
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
