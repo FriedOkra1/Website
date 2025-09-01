@@ -19,60 +19,50 @@ const { title, description = "Welcome to my portfolio website" } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <nav class="py-4 border-b section-border">
-      <div class="max-w-4xl mx-auto px-4">
-        <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 items-start sm:items-center justify-between">
-          <div class="flex flex-wrap gap-4 sm:gap-6">
-            <a href="/" class="nav-link font-bold text-lg">Ayush Madhav Kumar</a>
-            <a href="#about" class="nav-link">About</a>
-            <a href="#education" class="nav-link">Education</a>
-            <a href="#experience" class="nav-link">Experience</a>
-            <a href="#research" class="nav-link">Research & Projects</a>
-            <a href="#skills" class="nav-link">Skills & Awards</a>
-            <a href="#leadership" class="nav-link">Leadership</a>
-            <a href="#contact" class="nav-link">Contact</a>
-          </div>
-          <button id="theme-toggle" class="theme-toggle mt-2 sm:mt-0">
-            <span id="theme-text">Dark</span>
-          </button>
+    <!-- Matrix background effect -->
+    <div class="terminal-matrix"></div>
+    
+    <!-- Terminal Header -->
+    <header class="terminal-header py-4">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center">
+          <h1 class="terminal-title text-3xl mb-2">AYUSH MADHAV KUMAR</h1>
+          <p class="terminal-text text-lg">Terminal Portfolio</p>
+          <p class="terminal-info text-sm">Type 'help' for available commands</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Terminal Navigation -->
+    <nav class="terminal-nav">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="terminal-flex flex-wrap justify-center gap-4">
+          <a href="/" class="terminal-link font-bold">HOME</a>
+          <a href="#about" class="terminal-link">ABOUT</a>
+          <a href="#education" class="terminal-link">EDUCATION</a>
+          <a href="#experience" class="terminal-link">EXPERIENCE</a>
+          <a href="#research" class="terminal-link">RESEARCH</a>
+          <a href="#skills" class="terminal-link">SKILLS</a>
+          <a href="#leadership" class="terminal-link">LEADERSHIP</a>
+          <a href="#contact" class="terminal-link">CONTACT</a>
         </div>
       </div>
     </nav>
 
-    <main>
+    <main class="terminal-scroll">
       <slot />
     </main>
 
+    <!-- Terminal Footer -->
+    <footer class="terminal-header py-4 mt-8">
+      <div class="max-w-6xl mx-auto px-4 text-center">
+        <p class="terminal-text">System Status: <span class="terminal-success">ONLINE</span></p>
+        <p class="terminal-text text-sm">Last updated: <span class="terminal-highlight">$(date)</span></p>
+      </div>
+    </footer>
+
     <script>
-      // Theme toggle functionality
-      const themeToggle = document.getElementById('theme-toggle');
-      const themeText = document.getElementById('theme-text');
-      const body = document.body;
-
-      // Check for saved theme preference or default to light mode
-      const savedTheme = localStorage.getItem('theme') || 'light';
-      if (savedTheme === 'dark' && themeText) {
-        body.classList.add('dark');
-        themeText.textContent = 'Light';
-      } else if (themeText) {
-        themeText.textContent = 'Dark';
-      }
-
-      // Toggle theme
-      themeToggle?.addEventListener('click', () => {
-        body.classList.toggle('dark');
-        const isDark = body.classList.contains('dark');
-        
-        if (isDark && themeText) {
-          localStorage.setItem('theme', 'dark');
-          themeText.textContent = 'Light';
-        } else if (themeText) {
-          localStorage.setItem('theme', 'light');
-          themeText.textContent = 'Dark';
-        }
-      });
-
-      // Smooth scrolling for navigation links
+      // Terminal-style smooth scrolling
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', (e) => {
           e.preventDefault();
@@ -88,6 +78,36 @@ const { title, description = "Welcome to my portfolio website" } = Astro.props;
           }
         });
       });
+
+      // Terminal typing effect for titles
+      document.addEventListener('DOMContentLoaded', () => {
+        const titles = document.querySelectorAll('.terminal-title');
+        titles.forEach(title => {
+          title.classList.add('terminal-typewriter');
+        });
+      });
+
+      // Matrix rain effect
+      function createMatrixRain() {
+        const matrix = document.querySelector('.terminal-matrix');
+        if (matrix) {
+          for (let i = 0; i < 50; i++) {
+            const drop = document.createElement('div');
+            drop.style.position = 'absolute';
+            drop.style.left = Math.random() * 100 + '%';
+            drop.style.animationDelay = Math.random() * 10 + 's';
+            drop.style.animationDuration = (Math.random() * 10 + 5) + 's';
+            drop.textContent = Math.random() > 0.5 ? '01' : '10';
+            drop.style.color = '#00ff00';
+            drop.style.fontSize = '12px';
+            drop.style.opacity = '0.1';
+            drop.style.animation = 'matrix-fall linear infinite';
+            matrix.appendChild(drop);
+          }
+        }
+      }
+
+      createMatrixRain();
     </script>
   </body>
 </html>

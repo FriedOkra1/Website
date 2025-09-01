@@ -1,0 +1,578 @@
+---
+// Terminal CLI Component
+---
+
+<div class="terminal-cli-container">
+  <div class="terminal-cli-header">
+    <span class="terminal-cli-title">Terminal Interface</span>
+    <div class="terminal-cli-controls">
+      <span class="terminal-cli-control minimize" id="minimize-btn"></span>
+      <span class="terminal-cli-control maximize" id="maximize-btn"></span>
+      <span class="terminal-cli-control close" id="close-btn"></span>
+    </div>
+  </div>
+  <div class="terminal-cli-body">
+    <div class="terminal-cli-output" id="cli-output">
+      <div class="terminal-cli-line">
+        <span class="terminal-cli-prompt">ayush@portfolio:~$</span>
+        <span class="terminal-cli-text">Welcome to Ayush's Terminal Portfolio</span>
+      </div>
+      <div class="terminal-cli-line">
+        <span class="terminal-cli-prompt">ayush@portfolio:~$</span>
+        <span class="terminal-cli-text">Type 'help' for available commands</span>
+      </div>
+    </div>
+    <div class="terminal-cli-input-line">
+      <span class="terminal-cli-prompt">ayush@portfolio:~$</span>
+      <input type="text" class="terminal-cli-input" id="cli-input" placeholder="Enter command..." autocomplete="off">
+    </div>
+  </div>
+  <!-- Resize handles -->
+  <div class="terminal-cli-resize-handle terminal-cli-resize-n"></div>
+  <div class="terminal-cli-resize-handle terminal-cli-resize-s"></div>
+  <div class="terminal-cli-resize-handle terminal-cli-resize-e"></div>
+  <div class="terminal-cli-resize-handle terminal-cli-resize-w"></div>
+  <div class="terminal-cli-resize-handle terminal-cli-resize-ne"></div>
+  <div class="terminal-cli-resize-handle terminal-cli-resize-nw"></div>
+  <div class="terminal-cli-resize-handle terminal-cli-resize-se"></div>
+  <div class="terminal-cli-resize-handle terminal-cli-resize-sw"></div>
+</div>
+
+<style>
+  .terminal-cli-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 500px;
+    height: 300px;
+    background-color: #000000;
+    border: 2px solid #00ff00;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+    z-index: 1000;
+    font-family: 'JetBrains Mono', monospace;
+    display: none;
+    min-width: 300px;
+    min-height: 200px;
+  }
+
+  .terminal-cli-container.show {
+    display: block;
+  }
+
+  .terminal-cli-header {
+    background-color: #0a0a0a;
+    padding: 8px 12px;
+    border-bottom: 1px solid #00ff00;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: move;
+    user-select: none;
+  }
+
+  .terminal-cli-title {
+    color: #00ff00;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  .terminal-cli-controls {
+    display: flex;
+    gap: 6px;
+  }
+
+  .terminal-cli-control {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .terminal-cli-control:hover {
+    transform: scale(1.1);
+  }
+
+  .terminal-cli-control.minimize {
+    background-color: #ffaa00;
+  }
+
+  .terminal-cli-control.maximize {
+    background-color: #00ff00;
+  }
+
+  .terminal-cli-control.close {
+    background-color: #ff0000;
+  }
+
+  .terminal-cli-body {
+    padding: 12px;
+    height: calc(100% - 40px);
+    overflow-y: auto;
+  }
+
+  .terminal-cli-output {
+    margin-bottom: 12px;
+  }
+
+  .terminal-cli-line {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+  }
+
+  .terminal-cli-prompt {
+    color: #00ff00;
+    margin-right: 8px;
+    font-weight: bold;
+  }
+
+  .terminal-cli-text {
+    color: #00ff00;
+  }
+
+  .terminal-cli-input-line {
+    display: flex;
+    align-items: center;
+  }
+
+  .terminal-cli-input {
+    background-color: transparent;
+    border: none;
+    color: #00ff00;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    outline: none;
+    flex: 1;
+  }
+
+  .terminal-cli-input::placeholder {
+    color: #00aa00;
+    opacity: 0.7;
+  }
+
+  .terminal-cli-command {
+    color: #ffff00;
+    font-weight: bold;
+  }
+
+  .terminal-cli-error {
+    color: #ff0000;
+  }
+
+  .terminal-cli-success {
+    color: #00ff00;
+  }
+
+  .terminal-cli-info {
+    color: #00aaff;
+  }
+
+  /* Resize handles */
+  .terminal-cli-resize-handle {
+    position: absolute;
+    background-color: transparent;
+  }
+
+  .terminal-cli-resize-handle:hover {
+    background-color: rgba(0, 255, 0, 0.2);
+  }
+
+  .terminal-cli-resize-n {
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    cursor: n-resize;
+  }
+
+  .terminal-cli-resize-s {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    cursor: s-resize;
+  }
+
+  .terminal-cli-resize-e {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 4px;
+    cursor: e-resize;
+  }
+
+  .terminal-cli-resize-w {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 4px;
+    cursor: w-resize;
+  }
+
+  .terminal-cli-resize-ne {
+    top: 0;
+    right: 0;
+    width: 8px;
+    height: 8px;
+    cursor: ne-resize;
+  }
+
+  .terminal-cli-resize-nw {
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    cursor: nw-resize;
+  }
+
+  .terminal-cli-resize-se {
+    bottom: 0;
+    right: 0;
+    width: 8px;
+    height: 8px;
+    cursor: se-resize;
+  }
+
+  .terminal-cli-resize-sw {
+    bottom: 0;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    cursor: sw-resize;
+  }
+</style>
+
+<script>
+  class TerminalCLI {
+    private output: HTMLElement | null;
+    private input: HTMLInputElement | null;
+    private container: HTMLElement | null;
+    private commands: Record<string, (...args: any[]) => void>;
+
+    constructor() {
+      this.output = document.getElementById('cli-output');
+      this.input = document.getElementById('cli-input') as HTMLInputElement;
+      this.container = document.querySelector('.terminal-cli-container');
+      this.commands = {
+        help: () => this.showHelp(),
+        clear: () => this.clearOutput(),
+        about: () => this.showAbout(),
+        skills: () => this.showSkills(),
+        projects: () => this.showProjects(),
+        contact: () => this.showContact(),
+        date: () => this.showDate(),
+        whoami: () => this.showWhoami(),
+        ls: () => this.showFiles(),
+        cat: (args: string[]) => this.showFile(args),
+        echo: (args: string[]) => this.echo(args),
+        version: () => this.showVersion(),
+        matrix: () => this.toggleMatrix()
+      };
+      
+      this.init();
+    }
+
+    init() {
+      if (this.input) {
+        this.input.addEventListener('keypress', (e) => {
+          if (e.key === 'Enter') {
+            this.executeCommand(this.input!.value);
+            this.input!.value = '';
+          }
+        });
+      }
+
+      // Control button functionality
+      this.setupControls();
+      
+      // Make terminal draggable
+      this.makeDraggable();
+      
+      // Make terminal resizable
+      this.makeResizable();
+    }
+
+    setupControls() {
+      const closeBtn = document.getElementById('close-btn');
+      const minimizeBtn = document.getElementById('minimize-btn');
+      const maximizeBtn = document.getElementById('maximize-btn');
+
+      closeBtn?.addEventListener('click', () => {
+        this.container?.classList.remove('show');
+      });
+
+      minimizeBtn?.addEventListener('click', () => {
+        if (this.container) {
+          this.container.style.transform = 'translateY(calc(100vh - 40px))';
+        }
+      });
+
+      maximizeBtn?.addEventListener('click', () => {
+        if (this.container) {
+          if (this.container.style.width === '100vw' && this.container.style.height === '100vh') {
+            this.container.style.width = '500px';
+            this.container.style.height = '300px';
+            this.container.style.transform = '';
+          } else {
+            this.container.style.width = '100vw';
+            this.container.style.height = '100vh';
+            this.container.style.transform = '';
+          }
+        }
+      });
+    }
+
+    executeCommand(cmd: string) {
+      const parts = cmd.trim().split(' ');
+      const command = parts[0].toLowerCase();
+      const args = parts.slice(1);
+
+      this.addLine(`$ ${cmd}`, 'command');
+
+      if (this.commands[command]) {
+        this.commands[command](args);
+      } else if (command) {
+        this.addLine(`Command not found: ${command}. Type 'help' for available commands.`, 'error');
+      }
+    }
+
+    addLine(text: string, type: string = 'text') {
+      if (!this.output) return;
+      
+      const line = document.createElement('div');
+      line.className = 'terminal-cli-line';
+      
+      const prompt = document.createElement('span');
+      prompt.className = 'terminal-cli-prompt';
+      prompt.textContent = 'ayush@portfolio:~$';
+      
+      const textSpan = document.createElement('span');
+      textSpan.className = `terminal-cli-${type}`;
+      textSpan.textContent = text;
+      
+      line.appendChild(prompt);
+      line.appendChild(textSpan);
+      this.output.appendChild(line);
+      
+      this.output.scrollTop = this.output.scrollHeight;
+    }
+
+    showHelp() {
+      this.addLine('Available commands:', 'info');
+      this.addLine('  help     - Show this help message', 'text');
+      this.addLine('  about    - Show about information', 'text');
+      this.addLine('  skills   - Show technical skills', 'text');
+      this.addLine('  projects - Show projects', 'text');
+      this.addLine('  contact  - Show contact information', 'text');
+      this.addLine('  date     - Show current date', 'text');
+      this.addLine('  whoami   - Show user information', 'text');
+      this.addLine('  ls       - List files', 'text');
+      this.addLine('  cat      - Display file contents', 'text');
+      this.addLine('  echo     - Echo text', 'text');
+      this.addLine('  version  - Show version', 'text');
+      this.addLine('  matrix   - Toggle matrix effect', 'text');
+      this.addLine('  clear    - Clear terminal', 'text');
+    }
+
+    showAbout() {
+      this.addLine('Ayush Madhav Kumar - Astrophysics & Computer Science Student', 'success');
+      this.addLine('Nationality: Indian | Location: US | GPA: 4.0', 'text');
+      this.addLine('Specializing in quantum physics, astronomy, and machine learning', 'text');
+    }
+
+    showSkills() {
+      this.addLine('Technical Skills:', 'info');
+      this.addLine('  Programming: Python, JavaScript, TypeScript, Java', 'text');
+      this.addLine('  Cloud: AWS, CI/CD, GitHub', 'text');
+      this.addLine('  Scientific: MATLAB, Mathematica, LaTeX', 'text');
+      this.addLine('  Languages: English, French, Hindi, Punjabi, Latin', 'text');
+    }
+
+    showProjects() {
+      this.addLine('Featured Projects:', 'info');
+      this.addLine('  Environmental Solutions App - Climate change solutions', 'text');
+      this.addLine('  Earth Radius Calculation - Astronomical collaboration', 'text');
+      this.addLine('  Advanced Mathematics Research - UCC & IMO training', 'text');
+    }
+
+    showContact() {
+      this.addLine('Contact Information:', 'info');
+      this.addLine('  Email: contactayushmadhav@gmail.com', 'text');
+      this.addLine('  Phone: +1 (734) 929-7314', 'text');
+      this.addLine('  LinkedIn: linkedin.com/in/ayush-madhav-kumar-848060206', 'text');
+    }
+
+    showDate() {
+      this.addLine(new Date().toLocaleString(), 'success');
+    }
+
+    showWhoami() {
+      this.addLine('ayush@portfolio:~$ Ayush Madhav Kumar', 'success');
+    }
+
+    showFiles() {
+      this.addLine('Available files:', 'info');
+      this.addLine('  about.txt     - Personal information', 'text');
+      this.addLine('  skills.txt    - Technical skills', 'text');
+      this.addLine('  projects.txt  - Project details', 'text');
+      this.addLine('  contact.txt   - Contact information', 'text');
+      this.addLine('  resume.pdf    - Full resume', 'text');
+    }
+
+    showFile(filename: string[]) {
+      if (!filename || filename.length === 0) {
+        this.addLine('Usage: cat <filename>', 'error');
+        return;
+      }
+
+      const files: Record<string, string> = {
+        'about.txt': 'Ayush Madhav Kumar\nIndian student in the US\n4.0 GPA\nAstrophysics & Computer Science',
+        'skills.txt': 'Python, JavaScript, AWS, Machine Learning\nMATLAB, Mathematica, LaTeX\nEnglish, French, Hindi, Punjabi, Latin',
+        'projects.txt': 'Environmental Solutions App\nEarth Radius Calculation\nAdvanced Mathematics Research',
+        'contact.txt': 'Email: contactayushmadhav@gmail.com\nPhone: +1 (734) 929-7314\nLinkedIn: Available',
+        'resume.pdf': 'Full resume available on the main website'
+      };
+
+      if (files[filename[0]]) {
+        this.addLine(files[filename[0]], 'text');
+      } else {
+        this.addLine(`File not found: ${filename[0]}`, 'error');
+      }
+    }
+
+    echo(args: string[]) {
+      if (args.length > 0) {
+        this.addLine(args.join(' '), 'text');
+      } else {
+        this.addLine('Usage: echo <text>', 'error');
+      }
+    }
+
+    showVersion() {
+      this.addLine('Terminal Portfolio v2.0.1', 'success');
+      this.addLine('Built with Astro & Terminal CSS', 'text');
+    }
+
+    toggleMatrix() {
+      const matrix = document.querySelector('.terminal-matrix');
+      if (matrix) {
+        matrix.style.opacity = matrix.style.opacity === '0.03' ? '0' : '0.03';
+        this.addLine(`Matrix effect ${matrix.style.opacity === '0' ? 'disabled' : 'enabled'}`, 'success');
+      }
+    }
+
+    clearOutput() {
+      if (this.output) {
+        this.output.innerHTML = '';
+        this.addLine('Terminal cleared', 'success');
+      }
+    }
+
+    makeDraggable() {
+      if (!this.container) return;
+      
+      const header = this.container.querySelector('.terminal-cli-header');
+      if (!header) return;
+      
+      let isDragging = false;
+      let currentX = 0;
+      let currentY = 0;
+      let initialX = 0;
+      let initialY = 0;
+      let xOffset = 0;
+      let yOffset = 0;
+
+      header.addEventListener('mousedown', (e: MouseEvent) => {
+        initialX = e.clientX - xOffset;
+        initialY = e.clientY - yOffset;
+        isDragging = true;
+      });
+
+      document.addEventListener('mousemove', (e: MouseEvent) => {
+        if (isDragging && this.container) {
+          e.preventDefault();
+          currentX = e.clientX - initialX;
+          currentY = e.clientY - initialY;
+          xOffset = currentX;
+          yOffset = currentY;
+          this.container.style.transform = `translate(${currentX}px, ${currentY}px)`;
+        }
+      });
+
+      document.addEventListener('mouseup', () => {
+        isDragging = false;
+      });
+    }
+
+    makeResizable() {
+      if (!this.container) return;
+      
+      const resizeHandles = this.container.querySelectorAll('.terminal-cli-resize-handle');
+      
+      resizeHandles.forEach(handle => {
+        let isResizing = false;
+        let startX = 0;
+        let startY = 0;
+        let startWidth = 0;
+        let startHeight = 0;
+        let startLeft = 0;
+        let startTop = 0;
+
+        handle.addEventListener('mousedown', (e: Event) => {
+          const mouseEvent = e as MouseEvent;
+          isResizing = true;
+          startX = mouseEvent.clientX;
+          startY = mouseEvent.clientY;
+          startWidth = this.container!.offsetWidth;
+          startHeight = this.container!.offsetHeight;
+          startLeft = this.container!.offsetLeft;
+          startTop = this.container!.offsetTop;
+          mouseEvent.preventDefault();
+        });
+
+        document.addEventListener('mousemove', (e: Event) => {
+          if (!isResizing || !this.container) return;
+          
+          const mouseEvent = e as MouseEvent;
+          const deltaX = mouseEvent.clientX - startX;
+          const deltaY = mouseEvent.clientY - startY;
+          
+          if (handle.classList.contains('terminal-cli-resize-e') || handle.classList.contains('terminal-cli-resize-se') || handle.classList.contains('terminal-cli-resize-ne')) {
+            const newWidth = Math.max(300, startWidth + deltaX);
+            (this.container as HTMLElement).style.width = newWidth + 'px';
+          }
+          
+          if (handle.classList.contains('terminal-cli-resize-s') || handle.classList.contains('terminal-cli-resize-se') || handle.classList.contains('terminal-cli-resize-sw')) {
+            const newHeight = Math.max(200, startHeight + deltaY);
+            (this.container as HTMLElement).style.height = newHeight + 'px';
+          }
+          
+          if (handle.classList.contains('terminal-cli-resize-w') || handle.classList.contains('terminal-cli-resize-nw') || handle.classList.contains('terminal-cli-resize-sw')) {
+            const newWidth = Math.max(300, startWidth - deltaX);
+            const newLeft = startLeft + (startWidth - newWidth);
+            (this.container as HTMLElement).style.width = newWidth + 'px';
+            (this.container as HTMLElement).style.left = newLeft + 'px';
+          }
+          
+          if (handle.classList.contains('terminal-cli-resize-n') || handle.classList.contains('terminal-cli-resize-nw') || handle.classList.contains('terminal-cli-resize-ne')) {
+            const newHeight = Math.max(200, startHeight - deltaY);
+            const newTop = startTop + (startHeight - newHeight);
+            (this.container as HTMLElement).style.height = newHeight + 'px';
+            (this.container as HTMLElement).style.top = newTop + 'px';
+          }
+        });
+
+        document.addEventListener('mouseup', () => {
+          isResizing = false;
+        });
+      });
+    }
+  }
+
+  // Initialize terminal when DOM is loaded
+  document.addEventListener('DOMContentLoaded', () => {
+    new TerminalCLI();
+  });
+</script>

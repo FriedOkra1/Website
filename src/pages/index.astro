@@ -1,203 +1,200 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import TerminalCLI from '../components/TerminalCLI.astro';
 ---
 
-<Layout title="Ayush Madhav Kumar - Portfolio">
-  <!-- Header Section -->
-  <section class="py-16 border-b section-border">
-    <div class="max-w-4xl mx-auto px-4">
-      <div class="text-center">
-        <h1 class="text-5xl font-bold mb-4">Ayush Madhav Kumar</h1>
-        <p class="text-2xl text-gray-600 dark:text-gray-400 mb-6">Astrophysics, Physics & Computer Science Enthusiast</p>
-        <p class="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-          Indian student in the US with 4.0 GPA, specializing in astrophysics, computer science, and engineering. 
-          A highly motivated researcher with expertise in quantum physics, astronomy, and machine learning. 
-          Seeking opportunities to contribute to cutting-edge research and academic excellence.
-        </p>
-        <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="#projects" class="btn-primary text-lg px-8 py-3">View Research</a>
-          <a href="#contact" class="btn-primary text-lg px-8 py-3">Get In Touch</a>
+<Layout title="AYUSH MADHAV KUMAR - Terminal Portfolio">
+  <!-- Terminal Welcome Section -->
+  <section class="terminal-section">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="terminal-title">SYSTEM INITIALIZATION</h2>
+      <div class="terminal-card">
+        <p class="terminal-text"><span class="terminal-highlight">$</span> whoami</p>
+        <p class="terminal-text">ayush@portfolio:~$ Ayush Madhav Kumar</p>
+        <p class="terminal-text"><span class="terminal-highlight">$</span> cat profile.txt</p>
+        <p class="terminal-text">Indian student in the US with 4.0 GPA</p>
+        <p class="terminal-text">Specializing in astrophysics, computer science, and engineering</p>
+        <p class="terminal-text">Highly motivated researcher with expertise in quantum physics, astronomy, and ML</p>
+        <p class="terminal-text"><span class="terminal-highlight">$</span> ls -la opportunities/</p>
+        <div class="terminal-flex flex-wrap gap-4 mt-4">
+          <a href="#contact" class="terminal-button">connect</a>
+          <button id="open-terminal" class="terminal-button">open_terminal</button>
+        </div>
+        <div class="terminal-text mt-4 text-sm">
+          <p><span class="terminal-info">Tip:</span> Click <span class="terminal-highlight">open_terminal</span> to access interactive terminal</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- About Section -->
-  <section id="about" class="py-16 border-b section-border">
-    <div class="max-w-4xl mx-auto px-4">
-      <h2 class="section-title text-center mb-12">About Me</h2>
-      <div class="grid md:grid-cols-2 gap-12">
-        <div class="space-y-6">
-          <h3 class="text-xl font-semibold mb-4">Personal Information</h3>
-          <div class="space-y-3">
-            <p><strong>Name:</strong> Ayush Madhav Kumar</p>
-            <p><strong>Nationality:</strong> Indian</p>
-            <p><strong>Focus:</strong> Astrophysics, Physics & Computer Science</p>
-            <p><strong>Current GPA:</strong> 4.0/4.0</p>
-            <p><strong>Location:</strong> US</p>
-            <p><strong>Status:</strong> High School Student</p>
-          </div>
+  <section id="about" class="terminal-section">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="terminal-title">ABOUT_ME</h2>
+      <div class="terminal-grid md:grid-cols-2 gap-6">
+        <div class="terminal-card">
+          <h3 class="terminal-highlight mb-4">Personal Information</h3>
+          <p class="terminal-text"><span class="terminal-info">Name:</span> Ayush Madhav Kumar</p>
+          <p class="terminal-text"><span class="terminal-info">Nationality:</span> Indian</p>
+          <p class="terminal-text"><span class="terminal-info">Focus:</span> Astrophysics, Physics & Computer Science</p>
+          <p class="terminal-text"><span class="terminal-info">Current GPA:</span> 4.0/4.0</p>
+          <p class="terminal-text"><span class="terminal-info">Location:</span> US</p>
+          <p class="terminal-text"><span class="terminal-info">Status:</span> College Freshman</p>
         </div>
-        <div class="space-y-6">
-          <h3 class="text-xl font-semibold mb-4">Core Competencies</h3>
-          <div class="space-y-3">
-            <p><strong>Research:</strong> Quantum Physics, Astronomy, ML</p>
-            <p><strong>Technical:</strong> Python, AWS, Data Analysis</p>
-            <p><strong>Languages:</strong> English, French, Hindi, Punjabi, Latin</p>
-            <p><strong>Leadership:</strong> Club President, Student Council</p>
-          </div>
+        <div class="terminal-card">
+          <h3 class="terminal-highlight mb-4">Core Competencies</h3>
+          <p class="terminal-text"><span class="terminal-info">Research:</span> Quantum Physics, Astronomy, ML</p>
+          <p class="terminal-text"><span class="terminal-info">Technical:</span> Python, AWS, Data Analysis</p>
+          <p class="terminal-text"><span class="terminal-info">Languages:</span> English, French, Hindi, Punjabi, Latin</p>
+          <p class="terminal-text"><span class="terminal-info">Leadership:</span> Club President, Student Council</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Education Section -->
-  <section id="education" class="py-16 border-b section-border">
-    <div class="max-w-4xl mx-auto px-4">
-      <h2 class="section-title text-center mb-12">Education</h2>
+  <section id="education" class="terminal-section">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="terminal-title">EDUCATION_SYSTEM</h2>
       
-      <div class="experience-item">
-        <h3 class="experience-title">Douglas Community School (Irish Leaving Certificate)</h3>
-        <p class="experience-org">Current GPA: 4.0</p>
-        <p class="experience-date">2023 - 2025</p>
-        <ul>
-          <li class="experience-bullet">Predicted: H1 (100 points) in Mathematics, Physics, Chemistry, Accounting, English, Applied Mathematics</li>
-          <li class="experience-bullet">H2 (88 points) in French</li>
-          <li class="experience-bullet">Selected for advanced mathematics classes at UCC</li>
-          <li class="experience-bullet">Bi-weekly advanced IMO training for global representation</li>
-        </ul>
+      <div class="terminal-card">
+        <h3 class="terminal-highlight">Douglas Community School (Irish Leaving Certificate)</h3>
+        <p class="terminal-text"><span class="terminal-info">Current GPA:</span> 4.0</p>
+        <p class="terminal-text"><span class="terminal-info">Duration:</span> 2023 - 2025</p>
+        <p class="terminal-text"><span class="terminal-info">Predicted:</span> H1 (100 points) in Mathematics, Physics, Chemistry, Accounting, English, Applied Mathematics</p>
+        <p class="terminal-text"><span class="terminal-info">H2 (88 points):</span> French</p>
+        <p class="terminal-text"><span class="terminal-info">Advanced:</span> Selected for UCC advanced mathematics classes</p>
+        <p class="terminal-text"><span class="terminal-info">IMO Training:</span> Bi-weekly advanced training for global representation</p>
       </div>
 
-      <div class="experience-item">
-        <h3 class="experience-title">Global Indian International School (CBSE)</h3>
-        <p class="experience-org">10/10 GPA Unweighted</p>
-        <p class="experience-date">Previous Education</p>
-        <ul>
-          <li class="experience-bullet">Perfect academic record with comprehensive curriculum</li>
-          <li class="experience-bullet">Strong foundation in mathematics and sciences</li>
-          <li class="experience-bullet">FIITJEE 90% Scholarship recipient</li>
-        </ul>
+      <div class="terminal-card">
+        <h3 class="terminal-highlight">Global Indian International School (CBSE)</h3>
+        <p class="terminal-text"><span class="terminal-info">GPA:</span> 10/10 Unweighted</p>
+        <p class="terminal-text"><span class="terminal-info">Achievement:</span> Perfect academic record</p>
+        <p class="terminal-text"><span class="terminal-info">Scholarship:</span> FIITJEE 90% Scholarship recipient</p>
       </div>
     </div>
   </section>
 
   <!-- Experience Section -->
-  <section id="experience" class="py-16 border-b section-border">
-    <div class="max-w-4xl mx-auto px-4">
-      <h2 class="section-title text-center mb-12">Professional Experience</h2>
+  <section id="experience" class="terminal-section">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="terminal-title">EXPERIENCE_LOG</h2>
       
-      <div class="experience-item">
-        <h3 class="experience-title">Associate Intern - GIIT Solutions</h3>
-        <p class="experience-org">Summer 2024 & April 2025</p>
-        <p class="experience-date">2024 - 2025</p>
-        <ul>
-          <li class="experience-bullet">CI/CD based deployment on AWS cloud infrastructure</li>
-          <li class="experience-bullet">Python scripting for automation and data processing</li>
-          <li class="experience-bullet">Continued work on internal projects with enhanced deployment strategies</li>
-          <li class="experience-bullet">Collaborated with development teams on cloud-based solutions</li>
+      <div class="terminal-card">
+        <h3 class="terminal-highlight">Associate Intern - GIIT Solutions</h3>
+        <p class="terminal-text"><span class="terminal-info">Period:</span> Summer 2024 & April 2025</p>
+        <p class="terminal-text"><span class="terminal-info">Tasks:</span></p>
+        <ul class="terminal-text ml-6">
+          <li>• CI/CD based deployment on AWS cloud infrastructure</li>
+          <li>• Python scripting for automation and data processing</li>
+          <li>• Internal projects with enhanced deployment strategies</li>
+          <li>• Collaboration with development teams on cloud solutions</li>
         </ul>
       </div>
 
-      <div class="experience-item">
-        <h3 class="experience-title">Entrepreneurship Accelerator Intern - DogPatch Labs</h3>
-        <p class="experience-org">7-week intensive program based in Dublin</p>
-        <p class="experience-date">Summer 2025</p>
-        <ul>
-          <li class="experience-bullet">Participated in intensive entrepreneurship accelerator program</li>
-          <li class="experience-bullet">Developed business models and startup strategies</li>
-          <li class="experience-bullet">Networked with industry professionals and mentors</li>
-          <li class="experience-bullet">Presented innovative solutions to real-world challenges</li>
+      <div class="terminal-card">
+        <h3 class="terminal-highlight">Entrepreneurship Accelerator Intern - DogPatch Labs</h3>
+        <p class="terminal-text"><span class="terminal-info">Duration:</span> 7-week intensive program in Dublin</p>
+        <p class="terminal-text"><span class="terminal-info">Activities:</span></p>
+        <ul class="terminal-text ml-6">
+          <li>• Intensive entrepreneurship accelerator program</li>
+          <li>• Business model development and startup strategies</li>
+          <li>• Networking with industry professionals and mentors</li>
+          <li>• Presentation of innovative solutions to real-world challenges</li>
         </ul>
       </div>
 
-      <div class="experience-item">
-        <h3 class="experience-title">Wearable Technology Developer - CareTether</h3>
-        <p class="experience-org">Innovative healthcare technology startup</p>
-        <p class="experience-date">Summer 2025</p>
-        <ul>
-          <li class="experience-bullet">Developed wearable app and device system for elderly with cognitive difficulties</li>
-          <li class="experience-bullet">Integrated hardware and software solutions for healthcare monitoring</li>
-          <li class="experience-bullet">Focused on user experience and accessibility for vulnerable populations</li>
-          <li class="experience-bullet">Collaborated with healthcare professionals on product requirements</li>
+      <div class="terminal-card">
+        <h3 class="terminal-highlight">Wearable Technology Developer - CareTether</h3>
+        <p class="terminal-text"><span class="terminal-info">Project:</span> Healthcare technology startup</p>
+        <p class="terminal-text"><span class="terminal-info">Development:</span></p>
+        <ul class="terminal-text ml-6">
+          <li>• Wearable app and device system for elderly with cognitive difficulties</li>
+          <li>• Hardware and software integration for healthcare monitoring</li>
+          <li>• User experience and accessibility for vulnerable populations</li>
+          <li>• Collaboration with healthcare professionals on requirements</li>
         </ul>
       </div>
     </div>
   </section>
 
   <!-- Research Section -->
-  <section id="research" class="py-16 border-b section-border">
-    <div class="max-w-4xl mx-auto px-4">
-      <h2 class="section-title text-center mb-12">Research Experience</h2>
+  <section id="research" class="terminal-section">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="terminal-title">RESEARCH_DATABASE</h2>
       
-      <div class="experience-item">
-        <h3 class="experience-title">Independent Research - Multiple Fields</h3>
-        <p class="experience-org">Mentor: Neil Bronks, School Physics Teacher</p>
-        <p class="experience-date">2023 - 2025</p>
-        <ul>
-          <li class="experience-bullet">Authored six research papers in diverse scientific fields</li>
-          <li class="experience-bullet">Quantum Physics: Quantum entanglement and secure communications</li>
-          <li class="experience-bullet">Astronomy: Exoplanet detection, stellar wind impacts on habitability</li>
-          <li class="experience-bullet">Machine Learning: Bitcoin price prediction algorithms</li>
-          <li class="experience-bullet">Game Theory: Chess analysis and mental health impact of technology on students</li>
-          <li class="experience-bullet">Research commended by Physics professors at UCC</li>
-          <li class="experience-bullet">Papers under review at major journals including arXiv</li>
-          <li class="experience-bullet">Published research findings on Medium platform</li>
+      <div class="terminal-card">
+        <h3 class="terminal-highlight">Independent Research - Multiple Fields</h3>
+        <p class="terminal-text"><span class="terminal-info">Mentor:</span> Neil Bronks, School Physics Teacher</p>
+        <p class="terminal-text"><span class="terminal-info">Papers:</span> 6 research papers in diverse scientific fields</p>
+        <p class="terminal-text"><span class="terminal-info">Fields:</span></p>
+        <ul class="terminal-text ml-6">
+          <li>• Quantum Physics: Quantum entanglement and secure communications</li>
+          <li>• Astronomy: Exoplanet detection, stellar wind impacts on habitability</li>
+          <li>• Machine Learning: Bitcoin price prediction algorithms</li>
+          <li>• Game Theory: Chess analysis and mental health impact of technology</li>
         </ul>
+        <p class="terminal-text"><span class="terminal-info">Status:</span> Research commended by UCC Physics professors</p>
+        <p class="terminal-text"><span class="terminal-info">Publication:</span> Papers under review at major journals including arXiv</p>
+        <p class="terminal-text"><span class="terminal-info">Platform:</span> Published findings on Medium</p>
       </div>
     </div>
   </section>
 
   <!-- Projects Section -->
-  <section id="projects" class="py-16 border-b section-border">
-    <div class="max-w-4xl mx-auto px-4">
-      <h2 class="section-title text-center mb-12">Featured Projects</h2>
+  <section id="projects" class="terminal-section">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="terminal-title">PROJECT_DIRECTORY</h2>
       
-      <div class="experience-item">
-        <h3 class="experience-title">Environmental Solutions App</h3>
-        <p class="experience-org">Real World Challenges Conference, 9th Grade</p>
-        <p class="experience-date">Environmental • <a href="#" class="btn-primary">Project Details</a></p>
-        <ul>
-          <li class="experience-bullet">Developed comprehensive app to address climate change issues</li>
-          <li class="experience-bullet">Focused on waste management and energy conservation solutions</li>
-          <li class="experience-bullet">Presented at international conference showcasing innovative environmental technology</li>
-          <li class="experience-bullet">Technologies: Mobile App Development, Environmental Science</li>
+      <div class="terminal-card">
+        <h3 class="terminal-highlight">Environmental Solutions App</h3>
+        <p class="terminal-text"><span class="terminal-info">Conference:</span> Real World Challenges Conference, 9th Grade</p>
+        <p class="terminal-text"><span class="terminal-info">Purpose:</span> Climate change solutions app</p>
+        <p class="terminal-text"><span class="terminal-info">Features:</span></p>
+        <ul class="terminal-text ml-6">
+          <li>• Comprehensive climate change issue addressing</li>
+          <li>• Waste management and energy conservation solutions</li>
+          <li>• International conference presentation</li>
+          <li>• Mobile app development and environmental science integration</li>
         </ul>
       </div>
 
-      <div class="experience-item">
-        <h3 class="experience-title">Earth's Radius Calculation</h3>
-        <p class="experience-org">GSE One Conference - Global Collaboration</p>
-        <p class="experience-date">Astronomy • <a href="#" class="btn-primary">Research Paper</a></p>
-        <ul>
-          <li class="experience-bullet">Collaborated with global team using astronomical observations</li>
-          <li class="experience-bullet">Applied mathematical and astronomical principles for Earth measurement</li>
-          <li class="experience-bullet">Presented findings at international scientific conference</li>
-          <li class="experience-bullet">Technologies: Astronomy, Mathematics, Scientific Collaboration</li>
+      <div class="terminal-card">
+        <h3 class="terminal-highlight">Earth's Radius Calculation</h3>
+        <p class="terminal-text"><span class="terminal-info">Event:</span> GSE One Conference - Global Collaboration</p>
+        <p class="terminal-text"><span class="terminal-info">Method:</span> Astronomical observations and mathematical principles</p>
+        <p class="terminal-text"><span class="terminal-info">Achievement:</span></p>
+        <ul class="terminal-text ml-6">
+          <li>• Global team collaboration using astronomical observations</li>
+          <li>• Mathematical and astronomical principles application</li>
+          <li>• International scientific conference presentation</li>
+          <li>• Astronomy, Mathematics, and Scientific Collaboration</li>
         </ul>
       </div>
 
-      <div class="experience-item">
-        <h3 class="experience-title">Advanced Mathematics Research</h3>
-        <p class="experience-org">UCC Advanced Math Placement & IMO Training</p>
-        <p class="experience-date">Mathematics • <a href="#" class="btn-primary">Research Details</a></p>
-        <ul>
-          <li class="experience-bullet">Selected for weekly advanced mathematics classes at UCC</li>
-          <li class="experience-bullet">Participating in selective bi-weekly advanced IMO training</li>
-          <li class="experience-bullet">Preparing for global mathematical olympiad representation</li>
-          <li class="experience-bullet">Focus areas: Number Theory, Algebra, Geometry, Combinatorics</li>
+      <div class="terminal-card">
+        <h3 class="terminal-highlight">Advanced Mathematics Research</h3>
+        <p class="terminal-text"><span class="terminal-info">Program:</span> UCC Advanced Math Placement & IMO Training</p>
+        <p class="terminal-text"><span class="terminal-info">Selection:</span> Weekly advanced mathematics classes at UCC</p>
+        <p class="terminal-text"><span class="terminal-info">Training:</span></p>
+        <ul class="terminal-text ml-6">
+          <li>• Selective bi-weekly advanced IMO training</li>
+          <li>• Global mathematical olympiad representation preparation</li>
+          <li>• Focus areas: Number Theory, Algebra, Geometry, Combinatorics</li>
         </ul>
       </div>
     </div>
   </section>
 
   <!-- Skills Section -->
-  <section id="skills" class="py-16 border-b section-border">
-    <div class="max-w-4xl mx-auto px-4">
-      <h2 class="section-title text-center mb-12">Technical Skills</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="text-center">
-          <h3 class="text-xl font-semibold mb-4">Programming Languages</h3>
-          <div class="space-y-2">
+  <section id="skills" class="terminal-section">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="terminal-title">SKILLS_MATRIX</h2>
+      <div class="terminal-grid md:grid-cols-3 gap-6">
+        <div class="terminal-card text-center">
+          <h3 class="terminal-highlight mb-4">Programming Languages</h3>
+          <div class="terminal-text space-y-2">
             <p>Python (Advanced)</p>
             <p>JavaScript/TypeScript</p>
             <p>HTML & CSS</p>
@@ -205,9 +202,9 @@ import Layout from '../layouts/Layout.astro';
             <p>LaTeX</p>
           </div>
         </div>
-        <div class="text-center">
-          <h3 class="text-xl font-semibold mb-4">Tools & Technologies</h3>
-          <div class="space-y-2">
+        <div class="terminal-card text-center">
+          <h3 class="terminal-highlight mb-4">Tools & Technologies</h3>
+          <div class="terminal-text space-y-2">
             <p>AWS Cloud Services</p>
             <p>GitHub & CI/CD</p>
             <p>Machine Learning</p>
@@ -215,9 +212,9 @@ import Layout from '../layouts/Layout.astro';
             <p>MATLAB & Mathematica</p>
           </div>
         </div>
-        <div class="text-center">
-          <h3 class="text-xl font-semibold mb-4">Scientific Software</h3>
-          <div class="space-y-2">
+        <div class="terminal-card text-center">
+          <h3 class="terminal-highlight mb-4">Scientific Software</h3>
+          <div class="terminal-text space-y-2">
             <p>PLUTO (Astrophysics)</p>
             <p>Stockfish (Chess AI)</p>
             <p>Wolfram Mathematica</p>
@@ -230,26 +227,26 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- Awards Section -->
-  <section id="awards" class="py-16 border-b section-border">
-    <div class="max-w-4xl mx-auto px-4">
-      <h2 class="section-title text-center mb-12">Awards & Recognition</h2>
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="space-y-4">
-          <h3 class="text-xl font-semibold mb-4">Academic Excellence</h3>
-          <div class="space-y-3">
-            <p><strong>Royal Society of Chemistry:</strong> Top 25 in Chemistry on the Island of Ireland (2025)</p>
-            <p><strong>FIITJEE Scholarship:</strong> 90% Scholarship, premier JEE prep institute</p>
-            <p><strong>IrEOES Physics Olympiad:</strong> Finalist (2023), Ranked top 10</p>
-            <p><strong>Irish Chemistry Olympiad:</strong> Qualified (2024)</p>
+  <section id="awards" class="terminal-section">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="terminal-title">ACHIEVEMENTS_LOG</h2>
+      <div class="terminal-grid md:grid-cols-2 gap-6">
+        <div class="terminal-card">
+          <h3 class="terminal-highlight mb-4">Academic Excellence</h3>
+          <div class="terminal-text space-y-3">
+            <p><span class="terminal-info">Royal Society of Chemistry:</span> Top 25 in Chemistry on the Island of Ireland (2025)</p>
+            <p><span class="terminal-info">FIITJEE Scholarship:</span> 90% Scholarship, premier JEE prep institute</p>
+            <p><span class="terminal-info">IrEOES Physics Olympiad:</span> Finalist (2023), Ranked top 10</p>
+            <p><span class="terminal-info">Irish Chemistry Olympiad:</span> Qualified (2024)</p>
           </div>
         </div>
-        <div class="space-y-4">
-          <h3 class="text-xl font-semibold mb-4">Competition Achievements</h3>
-          <div class="space-y-3">
-            <p><strong>SOF International English Olympiad:</strong> 2nd Place International (2024)</p>
-            <p><strong>SOF Social Science Olympiad:</strong> Regional Winner (2024)</p>
-            <p><strong>SOF General Knowledge Olympiad:</strong> 1st Place Regional (2024)</p>
-            <p><strong>Bank of Ireland Quiz:</strong> 3rd Place Nationally</p>
+        <div class="terminal-card">
+          <h3 class="terminal-highlight mb-4">Competition Achievements</h3>
+          <div class="terminal-text space-y-3">
+            <p><span class="terminal-info">SOF International English Olympiad:</span> 2nd Place International (2024)</p>
+            <p><span class="terminal-info">SOF Social Science Olympiad:</span> Regional Winner (2024)</p>
+            <p><span class="terminal-info">SOF General Knowledge Olympiad:</span> 1st Place Regional (2024)</p>
+            <p><span class="terminal-info">Bank of Ireland Quiz:</span> 3rd Place Nationally</p>
           </div>
         </div>
       </div>
@@ -257,90 +254,118 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- Leadership Section -->
-  <section id="leadership" class="py-16 border-b section-border">
-    <div class="max-w-4xl mx-auto px-4">
-      <h2 class="section-title text-center mb-12">Leadership & Extracurricular</h2>
+  <section id="leadership" class="terminal-section">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="terminal-title">LEADERSHIP_PROCESSES</h2>
       
-      <div class="experience-item">
-        <h3 class="experience-title">President, Coding Club</h3>
-        <p class="experience-org">Douglas Community School</p>
-        <p class="experience-date">2023 - 2025</p>
-        <ul>
-          <li class="experience-bullet">Directed coding workshops teaching HTML and Python to younger students</li>
-          <li class="experience-bullet">Organized and hosted coding competitions fostering programming community</li>
-          <li class="experience-bullet">Mentored students in software development and problem-solving</li>
+      <div class="terminal-card">
+        <h3 class="terminal-highlight">President, Coding Club</h3>
+        <p class="terminal-text"><span class="terminal-info">Organization:</span> Douglas Community School</p>
+        <p class="terminal-text"><span class="terminal-info">Duration:</span> 2023 - 2025</p>
+        <p class="terminal-text"><span class="terminal-info">Responsibilities:</span></p>
+        <ul class="terminal-text ml-6">
+          <li>• Directed coding workshops teaching HTML and Python to younger students</li>
+          <li>• Organized and hosted coding competitions fostering programming community</li>
+          <li>• Mentored students in software development and problem-solving</li>
         </ul>
       </div>
 
-      <div class="experience-item">
-        <h3 class="experience-title">President, Chess Club</h3>
-        <p class="experience-org">Douglas Community School</p>
-        <p class="experience-date">2023 - 2025</p>
-        <ul>
-          <li class="experience-bullet">Managed club activities and led team to national-level tournaments</li>
-          <li class="experience-bullet">Achieved personal best 6/6 record in chess tournaments</li>
-          <li class="experience-bullet">Organized strategic training sessions and competitive events</li>
+      <div class="terminal-card">
+        <h3 class="terminal-highlight">President, Chess Club</h3>
+        <p class="terminal-text"><span class="terminal-info">Organization:</span> Douglas Community School</p>
+        <p class="terminal-text"><span class="terminal-info">Duration:</span> 2023 - 2025</p>
+        <p class="terminal-text"><span class="terminal-info">Achievements:</span></p>
+        <ul class="terminal-text ml-6">
+          <li>• Managed club activities and led team to national-level tournaments</li>
+          <li>• Achieved personal best 6/6 record in chess tournaments</li>
+          <li>• Organized strategic training sessions and competitive events</li>
         </ul>
       </div>
 
-      <div class="experience-item">
-        <h3 class="experience-title">Student Council Leader & Green Schools Representative</h3>
-        <p class="experience-org">Douglas Community School</p>
-        <p class="experience-date">2023 - 2025</p>
-        <ul>
-          <li class="experience-bullet">Key role in reinstating school library and setting up student forums</li>
-          <li class="experience-bullet">Leading bike shed installation for school-wide green travel initiative</li>
-          <li class="experience-bullet">Participated in eco-initiatives promoting sustainable transportation</li>
+      <div class="terminal-card">
+        <h3 class="terminal-highlight">Student Council Leader & Green Schools Representative</h3>
+        <p class="terminal-text"><span class="terminal-info">Organization:</span> Douglas Community School</p>
+        <p class="terminal-text"><span class="terminal-info">Duration:</span> 2023 - 2025</p>
+        <p class="terminal-text"><span class="terminal-info">Initiatives:</span></p>
+        <ul class="terminal-text ml-6">
+          <li>• Key role in reinstating school library and setting up student forums</li>
+          <li>• Leading bike shed installation for school-wide green travel initiative</li>
+          <li>• Participated in eco-initiatives promoting sustainable transportation</li>
         </ul>
       </div>
 
-      <div class="experience-item">
-        <h3 class="experience-title">Debate Club Leader & MUN Co-Chair</h3>
-        <p class="experience-org">International Level</p>
-        <p class="experience-date">2021 - 2025</p>
-        <ul>
-          <li class="experience-bullet">Multiple MUN conference victories and Best Speaker awards</li>
-          <li class="experience-bullet">Quality Control Presentation: 2nd Place in Asia</li>
-          <li class="experience-bullet">Co-Chaired International Davis College MUN</li>
-          <li class="experience-bullet">UCC Philosophy Debate: Regional winner focusing on ethics and societal issues</li>
+      <div class="terminal-card">
+        <h3 class="terminal-highlight">Debate Club Leader & MUN Co-Chair</h3>
+        <p class="terminal-text"><span class="terminal-info">Level:</span> International</p>
+        <p class="terminal-text"><span class="terminal-info">Duration:</span> 2021 - 2025</p>
+        <p class="terminal-text"><span class="terminal-info">Achievements:</span></p>
+        <ul class="terminal-text ml-6">
+          <li>• Multiple MUN conference victories and Best Speaker awards</li>
+          <li>• Quality Control Presentation: 2nd Place in Asia</li>
+          <li>• Co-Chaired International Davis College MUN</li>
+          <li>• UCC Philosophy Debate: Regional winner focusing on ethics and societal issues</li>
         </ul>
       </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="py-16">
-    <div class="max-w-4xl mx-auto px-4">
-      <h2 class="section-title text-center mb-12">Get In Touch</h2>
-      <div class="text-center mb-12">
-        <p class="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
+  <section id="contact" class="terminal-section">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="terminal-title">CONNECTION_PROTOCOLS</h2>
+      <div class="terminal-text text-center mb-8">
+        <p class="text-lg max-w-2xl mx-auto">
           I'm always interested in discussing research opportunities, academic collaborations, or innovative projects. 
           Feel free to reach out through any of the channels below.
         </p>
       </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-        <div class="contact-card text-center">
-          <h3 class="text-lg font-bold text-white mb-2">Email</h3>
-          <a href="mailto:contactayushmadhav@gmail.com" class="text-blue-400 hover:text-blue-300">contactayushmadhav@gmail.com</a>
-          <p class="text-gray-400 text-sm mt-2">Primary contact method</p>
+      <div class="terminal-grid md:grid-cols-3 gap-6 mb-8">
+        <div class="terminal-card text-center">
+          <h3 class="terminal-highlight mb-2">Email</h3>
+          <a href="mailto:contactayushmadhav@gmail.com" class="terminal-button">contactayushmadhav@gmail.com</a>
+          <p class="terminal-text text-sm mt-2">Primary contact method</p>
         </div>
-        <div class="contact-card text-center">
-          <h3 class="text-lg font-bold text-white mb-2">Phone</h3>
-          <a href="tel:+17349297314" class="text-blue-400 hover:text-blue-300">+1 (734) 929-7314</a>
-          <p class="text-gray-400 text-sm mt-2">Available for calls</p>
+        <div class="terminal-card text-center">
+          <h3 class="terminal-highlight mb-2">Phone</h3>
+          <a href="tel:+17349297314" class="terminal-button">+1 (734) 929-7314</a>
+          <p class="terminal-text text-sm mt-2">Available for calls</p>
         </div>
-        <div class="contact-card text-center">
-          <h3 class="text-lg font-bold text-white mb-2">LinkedIn</h3>
-          <a href="https://www.linkedin.com/in/ayush-madhav-kumar-848060206/" class="text-blue-400 hover:text-blue-300">LinkedIn Profile</a>
-          <p class="text-gray-400 text-sm mt-2">Professional network</p>
+        <div class="terminal-card text-center">
+          <h3 class="terminal-highlight mb-2">LinkedIn</h3>
+          <a href="https://www.linkedin.com/in/ayush-madhav-kumar-848060206/" class="terminal-button">LinkedIn Profile</a>
+          <p class="terminal-text text-sm mt-2">Professional network</p>
         </div>
       </div>
-      <div class="card text-center">
-        <p class="text-lg">
-          <strong>Currently seeking:</strong> Research opportunities in Astrophysics and Physics, 
+      <div class="terminal-card text-center">
+        <p class="terminal-text text-lg">
+          <span class="terminal-highlight">Currently seeking:</span> Research opportunities in Astrophysics and Physics, 
           Academic collaborations, International competitions, and innovative technology projects.
         </p>
       </div>
     </div>
   </section>
+
+  <!-- Terminal CLI Component -->
+  <TerminalCLI />
+
+  <script>
+    // Make the open_terminal button functional
+    document.addEventListener('DOMContentLoaded', () => {
+      const openTerminalBtn = document.getElementById('open-terminal');
+      if (openTerminalBtn) {
+        openTerminalBtn.addEventListener('click', () => {
+          // Trigger the terminal to open
+          const terminalContainer = document.querySelector('.terminal-cli-container');
+          if (terminalContainer) {
+            terminalContainer.classList.add('show');
+            // Focus on the terminal input
+            const terminalInput = terminalContainer.querySelector('.terminal-cli-input') as HTMLInputElement;
+            if (terminalInput) {
+              terminalInput.focus();
+            }
+          }
+        });
+      }
+    });
+  </script>
 </Layout>
