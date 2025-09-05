@@ -4,49 +4,25 @@ import TerminalCLI from '../components/TerminalCLI.astro';
 ---
 
 <Layout title="AYUSH MADHAV KUMAR - Terminal Portfolio">
-  <!-- Terminal Welcome Section -->
-  <section class="terminal-section">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="terminal-title">SYSTEM INITIALIZATION</h2>
-      <div class="terminal-card">
-        <p class="terminal-text"><span class="terminal-highlight">$</span> whoami</p>
-        <p class="terminal-text">ayush@portfolio:~$ Ayush Madhav Kumar</p>
-        <p class="terminal-text"><span class="terminal-highlight">$</span> cat profile.txt</p>
-        <p class="terminal-text">Indian student in the US with 4.0 GPA</p>
-        <p class="terminal-text">Specializing in astrophysics, computer science, and engineering</p>
-        <p class="terminal-text">Highly motivated researcher with expertise in quantum physics, astronomy, and ML</p>
-        <p class="terminal-text"><span class="terminal-highlight">$</span> ls -la opportunities/</p>
-        <div class="terminal-flex flex-wrap gap-4 mt-4">
-          <a href="#contact" class="terminal-button">connect</a>
-          <button id="open-terminal" class="terminal-button">open_terminal</button>
-        </div>
-        <div class="terminal-text mt-4 text-sm">
-          <p><span class="terminal-info">Tip:</span> Click <span class="terminal-highlight">open_terminal</span> to access interactive terminal</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- About Section -->
   <section id="about" class="terminal-section">
     <div class="max-w-6xl mx-auto px-4">
-      <h2 class="terminal-title">ABOUT_ME</h2>
-      <div class="terminal-grid md:grid-cols-2 gap-6">
-        <div class="terminal-card">
-          <h3 class="terminal-highlight mb-4">Personal Information</h3>
-          <p class="terminal-text"><span class="terminal-info">Name:</span> Ayush Madhav Kumar</p>
-          <p class="terminal-text"><span class="terminal-info">Nationality:</span> Indian</p>
-          <p class="terminal-text"><span class="terminal-info">Focus:</span> Astrophysics, Physics & Computer Science</p>
-          <p class="terminal-text"><span class="terminal-info">Current GPA:</span> 4.0/4.0</p>
-          <p class="terminal-text"><span class="terminal-info">Location:</span> US</p>
-          <p class="terminal-text"><span class="terminal-info">Status:</span> College Freshman</p>
-        </div>
-        <div class="terminal-card">
-          <h3 class="terminal-highlight mb-4">Core Competencies</h3>
-          <p class="terminal-text"><span class="terminal-info">Research:</span> Quantum Physics, Astronomy, ML</p>
-          <p class="terminal-text"><span class="terminal-info">Technical:</span> Python, AWS, Data Analysis</p>
-          <p class="terminal-text"><span class="terminal-info">Languages:</span> English, French, Hindi, Punjabi, Latin</p>
-          <p class="terminal-text"><span class="terminal-info">Leadership:</span> Club President, Student Council</p>
+      <h2 class="terminal-title color-contact">ABOUT_ME</h2>
+      <div class="terminal-card">
+        <p class="terminal-text">Hello! I'm <span class="color-contact">Ayush Madhav Kumar</span></p>
+        <p class="terminal-text">Welcome to my terminal-style portfolio</p>
+        <p class="terminal-text">Currently seeking research opportunities in <span class="color-contact">Maths</span> and <span class="color-contact">CS</span></p>
+        
+        <p class="terminal-text"><span class="terminal-info">Nationality:</span> Indian</p>
+        <p class="terminal-text"><span class="terminal-info">Focus:</span> <span class="color-contact">Cybersecurity</span>, <span class="color-contact">AI</span> & <span class="color-contact">App/Web Dev</span></p>
+        <p class="terminal-text"><span class="terminal-info">Current GPA:</span> 4.0/4.0</p>
+        <p class="terminal-text"><span class="terminal-info">Location:</span> The United States</p>
+        <p class="terminal-text"><span class="terminal-info">Status:</span> College Freshman at <span class="color-contact">University of Michigan</span></p>
+        <p class="terminal-text"><span class="terminal-info">Languages:</span> <span class="color-contact">English</span> (Fluent), <span class="color-contact">Hindi</span> (Fluent), <span class="color-contact">French</span> (Intermediate), <span class="color-contact">Punjabi</span> (Intermediate), <span class="color-contact">Latin</span> (Intermediate)</p>
+        
+        <div class="terminal-flex flex-wrap gap-4 mt-6">
+          <a href="#contact" class="terminal-button">Connect</a>
+          <button id="open-terminal" class="terminal-button">Interactive Terminal</button>
         </div>
       </div>
     </div>
@@ -55,23 +31,32 @@ import TerminalCLI from '../components/TerminalCLI.astro';
   <!-- Education Section -->
   <section id="education" class="terminal-section">
     <div class="max-w-6xl mx-auto px-4">
-      <h2 class="terminal-title">EDUCATION_SYSTEM</h2>
+      <h2 class="terminal-title color-contact">ACADEMICS</h2>
       
-      <div class="terminal-card">
-        <h3 class="terminal-highlight">Douglas Community School (Irish Leaving Certificate)</h3>
-        <p class="terminal-text"><span class="terminal-info">Current GPA:</span> 4.0</p>
-        <p class="terminal-text"><span class="terminal-info">Duration:</span> 2023 - 2025</p>
-        <p class="terminal-text"><span class="terminal-info">Predicted:</span> H1 (100 points) in Mathematics, Physics, Chemistry, Accounting, English, Applied Mathematics</p>
-        <p class="terminal-text"><span class="terminal-info">H2 (88 points):</span> French</p>
-        <p class="terminal-text"><span class="terminal-info">Advanced:</span> Selected for UCC advanced mathematics classes</p>
-        <p class="terminal-text"><span class="terminal-info">IMO Training:</span> Bi-weekly advanced training for global representation</p>
+              <div class="terminal-card">
+          <h3 class="terminal-highlight color-contact">University of Michigan</h3>
+                  <p class="terminal-text"><span class="terminal-info">Degree:</span> <span class="color-contact">Computer Science</span></p>
+          <p class="terminal-text"><span class="terminal-info">College:</span> College of Engineering</p>
+          <p class="terminal-text"><span class="terminal-info">Status:</span> Current Student (Freshman)</p>
+          <p class="terminal-text"><span class="terminal-info">Duration:</span> 2025 - Present</p>
+          <p class="terminal-text"><span class="terminal-info">Location:</span> Ann Arbor, Michigan, USA</p>
       </div>
 
-      <div class="terminal-card">
-        <h3 class="terminal-highlight">Global Indian International School (CBSE)</h3>
-        <p class="terminal-text"><span class="terminal-info">GPA:</span> 10/10 Unweighted</p>
-        <p class="terminal-text"><span class="terminal-info">Achievement:</span> Perfect academic record</p>
-        <p class="terminal-text"><span class="terminal-info">Scholarship:</span> FIITJEE 90% Scholarship recipient</p>
+              <div class="terminal-card">
+          <h3 class="terminal-highlight color-contact">Douglas Community School (Irish Leaving Certificate)</h3>
+                  <p class="terminal-text"><span class="terminal-info">Current GPA:</span> 4.0</p>
+          <p class="terminal-text"><span class="terminal-info">Duration:</span> 2023 - 2025</p>
+          <p class="terminal-text"><span class="terminal-info">Predicted:</span> H1 (100 points) in <span class="color-contact">Mathematics</span>, <span class="color-contact">Physics</span>, <span class="color-contact">Chemistry</span>, <span class="color-contact">Accounting</span>, <span class="color-contact">English</span>, <span class="color-contact">Applied Mathematics</span></p>
+          <p class="terminal-text"><span class="terminal-info">H2 (88 points):</span> French</p>
+          <p class="terminal-text"><span class="terminal-info">IMO Training:</span> Selected for <span class="color-skills">UCC (University College Cork)</span> bi-weekly advanced training for global representation</p>
+          <p class="terminal-text"><span class="terminal-info">Achievement:</span> <span class="color-skills">IrMO Finalist</span> (2023), Ranked top 10</p>
+      </div>
+
+              <div class="terminal-card">
+          <h3 class="terminal-highlight color-contact">Global Indian International School (CBSE)</h3>
+                  <p class="terminal-text"><span class="terminal-info">GPA:</span> 10/10 Unweighted</p>
+          <p class="terminal-text"><span class="terminal-info">Achievement:</span> Perfect academic record</p>
+          <p class="terminal-text"><span class="terminal-info">Scholarship:</span> <span class="color-contact">FIITJEE</span> 90% Scholarship recipient</p>
       </div>
     </div>
   </section>
@@ -79,42 +64,42 @@ import TerminalCLI from '../components/TerminalCLI.astro';
   <!-- Experience Section -->
   <section id="experience" class="terminal-section">
     <div class="max-w-6xl mx-auto px-4">
-      <h2 class="terminal-title">EXPERIENCE_LOG</h2>
+      <h2 class="terminal-title color-skills">EXPERIENCE</h2>
       
-      <div class="terminal-card">
-        <h3 class="terminal-highlight">Associate Intern - GIIT Solutions</h3>
-        <p class="terminal-text"><span class="terminal-info">Period:</span> Summer 2024 & April 2025</p>
-        <p class="terminal-text"><span class="terminal-info">Tasks:</span></p>
-        <ul class="terminal-text ml-6">
-          <li>• CI/CD based deployment on AWS cloud infrastructure</li>
-          <li>• Python scripting for automation and data processing</li>
-          <li>• Internal projects with enhanced deployment strategies</li>
-          <li>• Collaboration with development teams on cloud solutions</li>
-        </ul>
+              <div class="terminal-card">
+          <h3 class="terminal-highlight color-skills">Associate Intern - GIIT Solutions</h3>
+                  <p class="terminal-text"><span class="terminal-info">Period:</span> Summer 2024 & April 2025</p>
+          <p class="terminal-text"><span class="terminal-info">Tasks:</span></p>
+          <ul class="terminal-text ml-6">
+            <li>• <span class="color-skills">CI/CD</span> based deployment on <span class="color-skills">AWS</span> cloud infrastructure</li>
+            <li>• <span class="color-skills">Python</span> scripting for automation and data processing</li>
+            <li>• Internal projects with enhanced deployment strategies</li>
+            <li>• Collaboration with development teams on cloud solutions</li>
+          </ul>
       </div>
 
-      <div class="terminal-card">
-        <h3 class="terminal-highlight">Entrepreneurship Accelerator Intern - DogPatch Labs</h3>
-        <p class="terminal-text"><span class="terminal-info">Duration:</span> 7-week intensive program in Dublin</p>
-        <p class="terminal-text"><span class="terminal-info">Activities:</span></p>
-        <ul class="terminal-text ml-6">
-          <li>• Intensive entrepreneurship accelerator program</li>
-          <li>• Business model development and startup strategies</li>
-          <li>• Networking with industry professionals and mentors</li>
-          <li>• Presentation of innovative solutions to real-world challenges</li>
-        </ul>
+              <div class="terminal-card">
+          <h3 class="terminal-highlight color-skills">Entrepreneurship Accelerator Intern - DogPatch Labs</h3>
+                  <p class="terminal-text"><span class="terminal-info">Duration:</span> 7-week intensive program in Dublin</p>
+          <p class="terminal-text"><span class="terminal-info">Activities:</span></p>
+          <ul class="terminal-text ml-6">
+            <li>• Intensive <span class="color-skills">entrepreneurship</span> accelerator program</li>
+            <li>• <span class="color-skills">Business model</span> development and startup strategies</li>
+            <li>• <span class="color-skills">Networking</span> with industry professionals and mentors</li>
+            <li>• <span class="color-skills">Presentation</span> of innovative solutions to real-world challenges</li>
+          </ul>
       </div>
 
-      <div class="terminal-card">
-        <h3 class="terminal-highlight">Wearable Technology Developer - CareTether</h3>
-        <p class="terminal-text"><span class="terminal-info">Project:</span> Healthcare technology startup</p>
-        <p class="terminal-text"><span class="terminal-info">Development:</span></p>
-        <ul class="terminal-text ml-6">
-          <li>• Wearable app and device system for elderly with cognitive difficulties</li>
-          <li>• Hardware and software integration for healthcare monitoring</li>
-          <li>• User experience and accessibility for vulnerable populations</li>
-          <li>• Collaboration with healthcare professionals on requirements</li>
-        </ul>
+              <div class="terminal-card">
+          <h3 class="terminal-highlight color-skills">Wearable Technology Developer - CareTether</h3>
+                  <p class="terminal-text"><span class="terminal-info">Project:</span> Healthcare technology startup</p>
+          <p class="terminal-text"><span class="terminal-info">Development:</span></p>
+          <ul class="terminal-text ml-6">
+            <li>• <span class="color-skills">Wearable app</span> and device system for elderly with cognitive difficulties</li>
+            <li>• <span class="color-skills">Hardware and software</span> integration for healthcare monitoring</li>
+            <li>• <span class="color-skills">User experience</span> and accessibility for vulnerable populations</li>
+            <li>• <span class="color-skills">Collaboration</span> with healthcare professionals on requirements</li>
+          </ul>
       </div>
     </div>
   </section>
@@ -122,22 +107,20 @@ import TerminalCLI from '../components/TerminalCLI.astro';
   <!-- Research Section -->
   <section id="research" class="terminal-section">
     <div class="max-w-6xl mx-auto px-4">
-      <h2 class="terminal-title">RESEARCH_DATABASE</h2>
+      <h2 class="terminal-title color-skills">RESEARCH</h2>
       
-      <div class="terminal-card">
-        <h3 class="terminal-highlight">Independent Research - Multiple Fields</h3>
-        <p class="terminal-text"><span class="terminal-info">Mentor:</span> Neil Bronks, School Physics Teacher</p>
-        <p class="terminal-text"><span class="terminal-info">Papers:</span> 6 research papers in diverse scientific fields</p>
-        <p class="terminal-text"><span class="terminal-info">Fields:</span></p>
-        <ul class="terminal-text ml-6">
-          <li>• Quantum Physics: Quantum entanglement and secure communications</li>
-          <li>• Astronomy: Exoplanet detection, stellar wind impacts on habitability</li>
-          <li>• Machine Learning: Bitcoin price prediction algorithms</li>
-          <li>• Game Theory: Chess analysis and mental health impact of technology</li>
-        </ul>
-        <p class="terminal-text"><span class="terminal-info">Status:</span> Research commended by UCC Physics professors</p>
-        <p class="terminal-text"><span class="terminal-info">Publication:</span> Papers under review at major journals including arXiv</p>
-        <p class="terminal-text"><span class="terminal-info">Platform:</span> Published findings on Medium</p>
+              <div class="terminal-card">
+          <h3 class="terminal-highlight color-skills">Independent Research - Multiple Fields</h3>
+                  <p class="terminal-text"><span class="terminal-info">Mentor:</span> Neil Bronks, School Physics Teacher</p>
+          <p class="terminal-text"><span class="terminal-info">Papers:</span> 6 research papers in diverse scientific fields</p>
+          <p class="terminal-text"><span class="terminal-info">Fields:</span></p>
+          <ul class="terminal-text ml-6">
+            <li>• <span class="color-skills">Quantum Physics:</span> Quantum entanglement and secure communications</li>
+            <li>• <span class="color-skills">Astronomy:</span> Exoplanet detection, stellar wind impacts on habitability</li>
+            <li>• <span class="color-skills">Machine Learning:</span> Bitcoin price prediction algorithms</li>
+            <li>• <span class="color-skills">Game Theory:</span> Chess analysis and mental health impact of technology</li>
+          </ul>
+          <p class="terminal-text"><span class="terminal-info">Status:</span> Research commended by <span class="color-skills">UCC (University College Cork)</span> Physics professors</p>
       </div>
     </div>
   </section>
@@ -145,10 +128,10 @@ import TerminalCLI from '../components/TerminalCLI.astro';
   <!-- Projects Section -->
   <section id="projects" class="terminal-section">
     <div class="max-w-6xl mx-auto px-4">
-      <h2 class="terminal-title">PROJECT_DIRECTORY</h2>
+      <h2 class="terminal-title color-skills">PROJECTS</h2>
       
-      <div class="terminal-card">
-        <h3 class="terminal-highlight">Environmental Solutions App</h3>
+              <div class="terminal-card">
+          <h3 class="terminal-highlight color-skills">Environmental Solutions App</h3>
         <p class="terminal-text"><span class="terminal-info">Conference:</span> Real World Challenges Conference, 9th Grade</p>
         <p class="terminal-text"><span class="terminal-info">Purpose:</span> Climate change solutions app</p>
         <p class="terminal-text"><span class="terminal-info">Features:</span></p>
@@ -160,8 +143,8 @@ import TerminalCLI from '../components/TerminalCLI.astro';
         </ul>
       </div>
 
-      <div class="terminal-card">
-        <h3 class="terminal-highlight">Earth's Radius Calculation</h3>
+              <div class="terminal-card">
+          <h3 class="terminal-highlight color-skills">Earth's Radius Calculation</h3>
         <p class="terminal-text"><span class="terminal-info">Event:</span> GSE One Conference - Global Collaboration</p>
         <p class="terminal-text"><span class="terminal-info">Method:</span> Astronomical observations and mathematical principles</p>
         <p class="terminal-text"><span class="terminal-info">Achievement:</span></p>
@@ -173,10 +156,10 @@ import TerminalCLI from '../components/TerminalCLI.astro';
         </ul>
       </div>
 
-      <div class="terminal-card">
-        <h3 class="terminal-highlight">Advanced Mathematics Research</h3>
-        <p class="terminal-text"><span class="terminal-info">Program:</span> UCC Advanced Math Placement & IMO Training</p>
-        <p class="terminal-text"><span class="terminal-info">Selection:</span> Weekly advanced mathematics classes at UCC</p>
+              <div class="terminal-card">
+          <h3 class="terminal-highlight color-skills">IMO Training Program</h3>
+        <p class="terminal-text"><span class="terminal-info">Program:</span> <span class="color-skills">UCC (University College Cork)</span> IMO Training</p>
+        <p class="terminal-text"><span class="terminal-info">Selection:</span> Weekly advanced mathematics classes at <span class="color-skills">UCC (University College Cork)</span></p>
         <p class="terminal-text"><span class="terminal-info">Training:</span></p>
         <ul class="terminal-text ml-6">
           <li>• Selective bi-weekly advanced IMO training</li>
@@ -190,36 +173,39 @@ import TerminalCLI from '../components/TerminalCLI.astro';
   <!-- Skills Section -->
   <section id="skills" class="terminal-section">
     <div class="max-w-6xl mx-auto px-4">
-      <h2 class="terminal-title">SKILLS_MATRIX</h2>
+      <h2 class="terminal-title color-skills">SKILLS</h2>
       <div class="terminal-grid md:grid-cols-3 gap-6">
         <div class="terminal-card text-center">
-          <h3 class="terminal-highlight mb-4">Programming Languages</h3>
+          <h3 class="terminal-highlight mb-4 color-skills">Programming Languages</h3>
           <div class="terminal-text space-y-2">
-            <p>Python (Advanced)</p>
-            <p>JavaScript/TypeScript</p>
-            <p>HTML & CSS</p>
-            <p>Java</p>
-            <p>LaTeX</p>
+            <p><span class="color-skills">Python</span> (Advanced)</p>
+            <p><span class="color-skills">JavaScript/TypeScript</span></p>
+            <p><span class="color-skills">HTML & CSS</span></p>
+            <p><span class="color-skills">Java</span></p>
+            <p><span class="color-skills">C</span></p>
+            <p><span class="color-skills">C++</span></p>
+            <p><span class="color-skills">LaTeX</span></p>
           </div>
         </div>
-        <div class="terminal-card text-center">
-          <h3 class="terminal-highlight mb-4">Tools & Technologies</h3>
-          <div class="terminal-text space-y-2">
-            <p>AWS Cloud Services</p>
-            <p>GitHub & CI/CD</p>
-            <p>Machine Learning</p>
-            <p>Data Analysis</p>
-            <p>MATLAB & Mathematica</p>
-          </div>
-        </div>
-        <div class="terminal-card text-center">
-          <h3 class="terminal-highlight mb-4">Scientific Software</h3>
-          <div class="terminal-text space-y-2">
-            <p>PLUTO (Astrophysics)</p>
-            <p>Stockfish (Chess AI)</p>
-            <p>Wolfram Mathematica</p>
-            <p>Scientific Computing</p>
-            <p>Research Tools</p>
+        <div class="terminal-card text-center md:col-span-2">
+          <h3 class="terminal-highlight mb-4 color-skills">Tools & Technologies</h3>
+          <div class="terminal-grid md:grid-cols-2 gap-4">
+            <div class="terminal-text space-y-2">
+              <p><span class="color-skills">AWS Cloud Services</span></p>
+              <p><span class="color-skills">Git</span></p>
+              <p><span class="color-skills">GitHub</span></p>
+              <p><span class="color-skills">CI/CD</span></p>
+              <p><span class="color-skills">Machine Learning</span></p>
+              <p><span class="color-skills">Data Analysis</span></p>
+              <p><span class="color-skills">MATLAB</span></p>
+            </div>
+            <div class="terminal-text space-y-2">
+              <p><span class="color-skills">PLUTO</span> (Astrophysics)</p>
+              <p><span class="color-skills">Stockfish</span> (Chess AI)</p>
+              <p><span class="color-skills">Wolfram Mathematica</span></p>
+              <p><span class="color-skills">Scientific Computing</span></p>
+              <p><span class="color-skills">Research Tools</span></p>
+            </div>
           </div>
         </div>
       </div>
@@ -229,10 +215,10 @@ import TerminalCLI from '../components/TerminalCLI.astro';
   <!-- Awards Section -->
   <section id="awards" class="terminal-section">
     <div class="max-w-6xl mx-auto px-4">
-      <h2 class="terminal-title">ACHIEVEMENTS_LOG</h2>
+      <h2 class="terminal-title color-leadership">ACHIEVEMENTS</h2>
       <div class="terminal-grid md:grid-cols-2 gap-6">
         <div class="terminal-card">
-          <h3 class="terminal-highlight mb-4">Academic Excellence</h3>
+          <h3 class="terminal-highlight mb-4 color-leadership">Academic Excellence</h3>
           <div class="terminal-text space-y-3">
             <p><span class="terminal-info">Royal Society of Chemistry:</span> Top 25 in Chemistry on the Island of Ireland (2025)</p>
             <p><span class="terminal-info">FIITJEE Scholarship:</span> 90% Scholarship, premier JEE prep institute</p>
@@ -241,7 +227,7 @@ import TerminalCLI from '../components/TerminalCLI.astro';
           </div>
         </div>
         <div class="terminal-card">
-          <h3 class="terminal-highlight mb-4">Competition Achievements</h3>
+          <h3 class="terminal-highlight mb-4 color-leadership">Competition Achievements</h3>
           <div class="terminal-text space-y-3">
             <p><span class="terminal-info">SOF International English Olympiad:</span> 2nd Place International (2024)</p>
             <p><span class="terminal-info">SOF Social Science Olympiad:</span> Regional Winner (2024)</p>
@@ -256,10 +242,10 @@ import TerminalCLI from '../components/TerminalCLI.astro';
   <!-- Leadership Section -->
   <section id="leadership" class="terminal-section">
     <div class="max-w-6xl mx-auto px-4">
-      <h2 class="terminal-title">LEADERSHIP_PROCESSES</h2>
+      <h2 class="terminal-title color-leadership">LEADERSHIP</h2>
       
-      <div class="terminal-card">
-        <h3 class="terminal-highlight">President, Coding Club</h3>
+              <div class="terminal-card">
+          <h3 class="terminal-highlight color-leadership">President, Coding Club</h3>
         <p class="terminal-text"><span class="terminal-info">Organization:</span> Douglas Community School</p>
         <p class="terminal-text"><span class="terminal-info">Duration:</span> 2023 - 2025</p>
         <p class="terminal-text"><span class="terminal-info">Responsibilities:</span></p>
@@ -270,8 +256,8 @@ import TerminalCLI from '../components/TerminalCLI.astro';
         </ul>
       </div>
 
-      <div class="terminal-card">
-        <h3 class="terminal-highlight">President, Chess Club</h3>
+              <div class="terminal-card">
+          <h3 class="terminal-highlight color-leadership">President, Chess Club</h3>
         <p class="terminal-text"><span class="terminal-info">Organization:</span> Douglas Community School</p>
         <p class="terminal-text"><span class="terminal-info">Duration:</span> 2023 - 2025</p>
         <p class="terminal-text"><span class="terminal-info">Achievements:</span></p>
@@ -282,8 +268,8 @@ import TerminalCLI from '../components/TerminalCLI.astro';
         </ul>
       </div>
 
-      <div class="terminal-card">
-        <h3 class="terminal-highlight">Student Council Leader & Green Schools Representative</h3>
+              <div class="terminal-card">
+          <h3 class="terminal-highlight color-leadership">Student Council Leader & Green Schools Representative</h3>
         <p class="terminal-text"><span class="terminal-info">Organization:</span> Douglas Community School</p>
         <p class="terminal-text"><span class="terminal-info">Duration:</span> 2023 - 2025</p>
         <p class="terminal-text"><span class="terminal-info">Initiatives:</span></p>
@@ -294,8 +280,8 @@ import TerminalCLI from '../components/TerminalCLI.astro';
         </ul>
       </div>
 
-      <div class="terminal-card">
-        <h3 class="terminal-highlight">Debate Club Leader & MUN Co-Chair</h3>
+              <div class="terminal-card">
+          <h3 class="terminal-highlight color-leadership">Debate Club Leader & MUN Co-Chair</h3>
         <p class="terminal-text"><span class="terminal-info">Level:</span> International</p>
         <p class="terminal-text"><span class="terminal-info">Duration:</span> 2021 - 2025</p>
         <p class="terminal-text"><span class="terminal-info">Achievements:</span></p>
@@ -303,7 +289,7 @@ import TerminalCLI from '../components/TerminalCLI.astro';
           <li>• Multiple MUN conference victories and Best Speaker awards</li>
           <li>• Quality Control Presentation: 2nd Place in Asia</li>
           <li>• Co-Chaired International Davis College MUN</li>
-          <li>• UCC Philosophy Debate: Regional winner focusing on ethics and societal issues</li>
+          <li>• <span class="color-skills">UCC (University College Cork)</span> Philosophy Debate: Regional winner focusing on ethics and societal issues</li>
         </ul>
       </div>
     </div>
@@ -312,7 +298,7 @@ import TerminalCLI from '../components/TerminalCLI.astro';
   <!-- Contact Section -->
   <section id="contact" class="terminal-section">
     <div class="max-w-6xl mx-auto px-4">
-      <h2 class="terminal-title">CONNECTION_PROTOCOLS</h2>
+      <h2 class="terminal-title color-contact">CONTACT</h2>
       <div class="terminal-text text-center mb-8">
         <p class="text-lg max-w-2xl mx-auto">
           I'm always interested in discussing research opportunities, academic collaborations, or innovative projects. 
@@ -321,25 +307,25 @@ import TerminalCLI from '../components/TerminalCLI.astro';
       </div>
       <div class="terminal-grid md:grid-cols-3 gap-6 mb-8">
         <div class="terminal-card text-center">
-          <h3 class="terminal-highlight mb-2">Email</h3>
+          <h3 class="terminal-highlight mb-2 color-contact">Email</h3>
           <a href="mailto:contactayushmadhav@gmail.com" class="terminal-button">contactayushmadhav@gmail.com</a>
           <p class="terminal-text text-sm mt-2">Primary contact method</p>
         </div>
         <div class="terminal-card text-center">
-          <h3 class="terminal-highlight mb-2">Phone</h3>
-          <a href="tel:+17349297314" class="terminal-button">+1 (734) 929-7314</a>
-          <p class="terminal-text text-sm mt-2">Available for calls</p>
+          <h3 class="terminal-highlight mb-2 color-contact">GitHub</h3>
+          <a href="https://github.com/FriedOkra1" class="terminal-button">FriedOkra1</a>
+          <p class="terminal-text text-sm mt-2">Code repositories</p>
         </div>
         <div class="terminal-card text-center">
-          <h3 class="terminal-highlight mb-2">LinkedIn</h3>
+          <h3 class="terminal-highlight mb-2 color-contact">LinkedIn</h3>
           <a href="https://www.linkedin.com/in/ayush-madhav-kumar-848060206/" class="terminal-button">LinkedIn Profile</a>
           <p class="terminal-text text-sm mt-2">Professional network</p>
         </div>
       </div>
       <div class="terminal-card text-center">
         <p class="terminal-text text-lg">
-          <span class="terminal-highlight">Currently seeking:</span> Research opportunities in Astrophysics and Physics, 
-          Academic collaborations, International competitions, and innovative technology projects.
+          <span class="terminal-highlight">Currently seeking:</span> <span class="color-contact">Research opportunities</span> in Astrophysics and Physics, 
+          <span class="color-contact">Academic collaborations</span>, <span class="color-contact">International competitions</span>, and <span class="color-contact">innovative technology projects</span>.
         </p>
       </div>
     </div>

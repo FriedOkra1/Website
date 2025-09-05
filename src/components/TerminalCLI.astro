@@ -6,7 +6,6 @@
   <div class="terminal-cli-header">
     <span class="terminal-cli-title">Terminal Interface</span>
     <div class="terminal-cli-controls">
-      <span class="terminal-cli-control minimize" id="minimize-btn"></span>
       <span class="terminal-cli-control maximize" id="maximize-btn"></span>
       <span class="terminal-cli-control close" id="close-btn"></span>
     </div>
@@ -45,10 +44,10 @@
     right: 20px;
     width: 500px;
     height: 300px;
-    background-color: #000000;
-    border: 2px solid #00ff00;
+    background-color: #ffffff;
+    border: 2px solid #000000;
     border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     z-index: 1000;
     font-family: 'JetBrains Mono', monospace;
     display: none;
@@ -56,14 +55,20 @@
     min-height: 200px;
   }
 
+  .dark .terminal-cli-container {
+    background-color: #000000 !important;
+    border: 2px solid #ffffff !important;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3) !important;
+  }
+
   .terminal-cli-container.show {
     display: block;
   }
 
   .terminal-cli-header {
-    background-color: #0a0a0a;
+    background-color: #f0f0f0;
     padding: 8px 12px;
-    border-bottom: 1px solid #00ff00;
+    border-bottom: 1px solid #000000;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -71,10 +76,19 @@
     user-select: none;
   }
 
+  .dark .terminal-cli-header {
+    background-color: #0a0a0a !important;
+    border-bottom: 1px solid #ffffff !important;
+  }
+
   .terminal-cli-title {
-    color: #00ff00;
+    color: #000000 !important;
     font-size: 12px;
     font-weight: bold;
+  }
+
+  .dark .terminal-cli-title {
+    color: #ffffff !important;
   }
 
   .terminal-cli-controls {
@@ -94,22 +108,23 @@
     transform: scale(1.1);
   }
 
-  .terminal-cli-control.minimize {
-    background-color: #ffaa00;
-  }
-
   .terminal-cli-control.maximize {
-    background-color: #00ff00;
+    background-color: #22c55e;
   }
 
   .terminal-cli-control.close {
-    background-color: #ff0000;
+    background-color: #ef4444;
   }
 
   .terminal-cli-body {
     padding: 12px;
     height: calc(100% - 40px);
     overflow-y: auto;
+    background-color: #ffffff;
+  }
+
+  .dark .terminal-cli-body {
+    background-color: #000000 !important;
   }
 
   .terminal-cli-output {
@@ -123,13 +138,21 @@
   }
 
   .terminal-cli-prompt {
-    color: #00ff00;
+    color: #22c55e !important; /* Green - matches color-skills */
     margin-right: 8px;
     font-weight: bold;
   }
 
+  .dark .terminal-cli-prompt {
+    color: #4ade80 !important; /* Lighter green for dark mode */
+  }
+
   .terminal-cli-text {
-    color: #00ff00;
+    color: #000000 !important;
+  }
+
+  .dark .terminal-cli-text {
+    color: #ffffff !important;
   }
 
   .terminal-cli-input-line {
@@ -140,33 +163,60 @@
   .terminal-cli-input {
     background-color: transparent;
     border: none;
-    color: #00ff00;
+    color: #000000 !important;
     font-family: 'JetBrains Mono', monospace;
     font-size: 14px;
     outline: none;
     flex: 1;
   }
 
+  .dark .terminal-cli-input {
+    color: #ffffff !important;
+  }
+
   .terminal-cli-input::placeholder {
-    color: #00aa00;
+    color: #666666;
     opacity: 0.7;
   }
 
+  .dark .terminal-cli-input::placeholder {
+    color: #cccccc;
+  }
+
   .terminal-cli-command {
-    color: #ffff00;
+    color: #1e40af !important; /* Royal Blue - matches color-contact */
     font-weight: bold;
   }
 
+  .dark .terminal-cli-command {
+    color: #3b82f6 !important; /* Lighter royal blue for dark mode */
+  }
+
   .terminal-cli-error {
-    color: #ff0000;
+    color: #ef4444 !important; /* Red - matches color-leadership */
+  }
+
+  .dark .terminal-cli-error {
+    color: #f87171 !important; /* Lighter red for dark mode */
   }
 
   .terminal-cli-success {
-    color: #00ff00;
+    color: #22c55e !important; /* Green - matches color-skills */
+    font-weight: bold;
+  }
+
+  .dark .terminal-cli-success {
+    color: #4ade80 !important; /* Lighter green for dark mode */
+    font-weight: bold;
   }
 
   .terminal-cli-info {
-    color: #00aaff;
+    color: #666666 !important;
+    font-weight: bold;
+  }
+
+  .dark .terminal-cli-info {
+    color: #cccccc !important;
   }
 
   /* Resize handles */
@@ -176,7 +226,11 @@
   }
 
   .terminal-cli-resize-handle:hover {
-    background-color: rgba(0, 255, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  .dark .terminal-cli-resize-handle:hover {
+    background-color: rgba(255, 255, 255, 0.2);
   }
 
   .terminal-cli-resize-n {
@@ -242,14 +296,66 @@
     height: 8px;
     cursor: sw-resize;
   }
+
+  /* Additional dark mode enhancements for better visibility */
+  .dark .terminal-cli-container * {
+    color: #ffffff !important;
+  }
+
+  /* More specific selectors to ensure white text in dark mode */
+  body.dark .terminal-cli-container * {
+    color: #ffffff !important;
+  }
+
+  body.dark .terminal-cli-prompt,
+  body.dark .terminal-cli-text,
+  body.dark .terminal-cli-command,
+  body.dark .terminal-cli-success,
+  body.dark .terminal-cli-info,
+  body.dark .terminal-cli-error,
+  body.dark .terminal-cli-title,
+  body.dark .terminal-cli-input {
+    color: #ffffff !important;
+  }
+
+  /* Ensure the terminal container itself gets dark mode styling */
+  body.dark .terminal-cli-container {
+    background-color: #000000 !important;
+    border: 2px solid #ffffff !important;
+  }
+
+  body.dark .terminal-cli-header {
+    background-color: #0a0a0a !important;
+    border-bottom: 1px solid #ffffff !important;
+  }
+
+  body.dark .terminal-cli-body {
+    background-color: #000000 !important;
+  }
+
+  .dark .terminal-cli-line {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .dark .terminal-cli-input-line {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 8px;
+  }
+
+  /* Ensure placeholder text is visible in dark mode */
+  .dark .terminal-cli-input::placeholder {
+    color: #999999 !important;
+    opacity: 1;
+  }
 </style>
 
-<script>
-  class TerminalCLI {
-    private output: HTMLElement | null;
-    private input: HTMLInputElement | null;
-    private container: HTMLElement | null;
-    private commands: Record<string, (...args: any[]) => void>;
+    <script>
+      class TerminalCLI {
+        private output: HTMLElement | null;
+        private input: HTMLInputElement | null;
+        private container: HTMLElement | null;
+        private commands: Record<string, (...args: any[]) => void>;
+        private themeObserver: MutationObserver | null = null;
 
     constructor() {
       this.output = document.getElementById('cli-output');
@@ -266,12 +372,11 @@
         whoami: () => this.showWhoami(),
         ls: () => this.showFiles(),
         cat: (args: string[]) => this.showFile(args),
-        echo: (args: string[]) => this.echo(args),
-        version: () => this.showVersion(),
-        matrix: () => this.toggleMatrix()
+        echo: (args: string[]) => this.echo(args)
       };
       
       this.init();
+      this.initThemeObserver();
     }
 
     init() {
@@ -296,17 +401,10 @@
 
     setupControls() {
       const closeBtn = document.getElementById('close-btn');
-      const minimizeBtn = document.getElementById('minimize-btn');
       const maximizeBtn = document.getElementById('maximize-btn');
 
       closeBtn?.addEventListener('click', () => {
         this.container?.classList.remove('show');
-      });
-
-      minimizeBtn?.addEventListener('click', () => {
-        if (this.container) {
-          this.container.style.transform = 'translateY(calc(100vh - 40px))';
-        }
       });
 
       maximizeBtn?.addEventListener('click', () => {
@@ -371,8 +469,7 @@
       this.addLine('  ls       - List files', 'text');
       this.addLine('  cat      - Display file contents', 'text');
       this.addLine('  echo     - Echo text', 'text');
-      this.addLine('  version  - Show version', 'text');
-      this.addLine('  matrix   - Toggle matrix effect', 'text');
+
       this.addLine('  clear    - Clear terminal', 'text');
     }
 
@@ -418,7 +515,7 @@
       this.addLine('  skills.txt    - Technical skills', 'text');
       this.addLine('  projects.txt  - Project details', 'text');
       this.addLine('  contact.txt   - Contact information', 'text');
-      this.addLine('  resume.pdf    - Full resume', 'text');
+
     }
 
     showFile(filename: string[]) {
@@ -432,7 +529,7 @@
         'skills.txt': 'Python, JavaScript, AWS, Machine Learning\nMATLAB, Mathematica, LaTeX\nEnglish, French, Hindi, Punjabi, Latin',
         'projects.txt': 'Environmental Solutions App\nEarth Radius Calculation\nAdvanced Mathematics Research',
         'contact.txt': 'Email: contactayushmadhav@gmail.com\nPhone: +1 (734) 929-7314\nLinkedIn: Available',
-        'resume.pdf': 'Full resume available on the main website'
+
       };
 
       if (files[filename[0]]) {
@@ -450,18 +547,11 @@
       }
     }
 
-    showVersion() {
-      this.addLine('Terminal Portfolio v2.0.1', 'success');
-      this.addLine('Built with Astro & Terminal CSS', 'text');
-    }
 
-    toggleMatrix() {
-      const matrix = document.querySelector('.terminal-matrix');
-      if (matrix) {
-        matrix.style.opacity = matrix.style.opacity === '0.03' ? '0' : '0.03';
-        this.addLine(`Matrix effect ${matrix.style.opacity === '0' ? 'disabled' : 'enabled'}`, 'success');
-      }
-    }
+
+
+
+
 
     clearOutput() {
       if (this.output) {
@@ -484,17 +574,19 @@
       let xOffset = 0;
       let yOffset = 0;
 
-      header.addEventListener('mousedown', (e: MouseEvent) => {
-        initialX = e.clientX - xOffset;
-        initialY = e.clientY - yOffset;
+      header.addEventListener('mousedown', (e: Event) => {
+        const mouseEvent = e as MouseEvent;
+        initialX = mouseEvent.clientX - xOffset;
+        initialY = mouseEvent.clientY - yOffset;
         isDragging = true;
       });
 
-      document.addEventListener('mousemove', (e: MouseEvent) => {
+      document.addEventListener('mousemove', (e: Event) => {
+        const mouseEvent = e as MouseEvent;
         if (isDragging && this.container) {
-          e.preventDefault();
-          currentX = e.clientX - initialX;
-          currentY = e.clientY - initialY;
+          mouseEvent.preventDefault();
+          currentX = mouseEvent.clientX - initialX;
+          currentY = mouseEvent.clientY - initialY;
           xOffset = currentX;
           yOffset = currentY;
           this.container.style.transform = `translate(${currentX}px, ${currentY}px)`;
@@ -568,6 +660,71 @@
           isResizing = false;
         });
       });
+    }
+
+    initThemeObserver() {
+      // Observe changes to the body class for theme switching
+      this.themeObserver = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+          if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+            // Theme has changed, apply appropriate styles
+            if (this.container) {
+              if (document.body.classList.contains('dark')) {
+                this.applyDarkMode();
+              } else {
+                this.applyLightMode();
+              }
+            }
+          }
+        });
+      });
+
+      // Start observing the body element for class changes
+      if (document.body) {
+        this.themeObserver.observe(document.body, {
+          attributes: true,
+          attributeFilter: ['class']
+        });
+      }
+
+      // Also check initial theme state
+      if (document.body.classList.contains('dark')) {
+        this.applyDarkMode();
+      }
+    }
+
+    applyDarkMode() {
+      // Force apply dark mode styles if needed
+      if (this.container && document.body.classList.contains('dark')) {
+        this.container.classList.add('dark');
+        
+        // Force white text on all elements
+        const allElements = this.container.querySelectorAll('*');
+        allElements.forEach(element => {
+          (element as HTMLElement).style.color = '#ffffff';
+        });
+        
+        // Also set container background
+        (this.container as HTMLElement).style.backgroundColor = '#000000';
+        (this.container as HTMLElement).style.border = '2px solid #ffffff';
+      }
+    }
+
+    applyLightMode() {
+      // Force apply light mode styles
+      if (this.container) {
+        this.container.classList.remove('dark');
+        
+        // Force black text on all elements
+        const allElements = this.container.querySelectorAll('*');
+        allElements.forEach(element => {
+          (element as HTMLElement).style.color = '#000000';
+        });
+        
+        // Also set container background
+        (this.container as HTMLElement).style.backgroundColor = '#ffffff';
+        (this.container as HTMLElement).style.border = '2px solid #000000';
+      }
     }
   }
 
