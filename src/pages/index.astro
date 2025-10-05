@@ -1,357 +1,166 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import TerminalCLI from '../components/TerminalCLI.astro';
+
+const socialLinks = [
+  {
+    name: "GitHub",
+    icon: "github",
+    url: "https://github.com/FriedOkra1",
+    label: "github.com/FriedOkra1"
+  },
+  {
+    name: "LinkedIn", 
+    icon: "linkedin",
+    url: "https://www.linkedin.com/in/ayush-madhav-kumar-848060206/",
+    label: "linkedin.com/in/ayush-madhav-kumar"
+  },
+  {
+    name: "Email",
+    icon: "email",
+    url: "mailto:contactayushmadhav@gmail.com",
+    label: "contactayushmadhav@gmail.com"
+  }
+];
+
+const interests = [
+  "Machine Learning",
+  "Cybersecurity", 
+  "App/Web Development",
+  "AI Research",
+  "Mathematics",
+  "Entrepreneurship"
+];
+
+const documents = [
+  {
+    name: "Resume",
+    icon: "filetext",
+    url: "/AyushMadhav_resume.pdf",
+    label: "Download Full Resume"
+  }
+];
 ---
 
-<Layout title="AYUSH MADHAV KUMAR - Terminal Portfolio">
-  <!-- About Section -->
-  <section id="about" class="terminal-section">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="terminal-title color-contact">ABOUT_ME</h2>
-      <div class="terminal-card">
-        <p class="terminal-text">Hello! I'm <span class="color-contact">Ayush Madhav Kumar</span></p>
-        <p class="terminal-text">Welcome to my terminal-style portfolio</p>
-        <p class="terminal-text">Currently seeking research opportunities in <span class="color-contact">Maths</span> and <span class="color-contact">CS</span></p>
-        
-        <p class="terminal-text"><span class="terminal-info">Nationality:</span> Indian</p>
-        <p class="terminal-text"><span class="terminal-info">Focus:</span> <span class="color-contact">Cybersecurity</span>, <span class="color-contact">AI</span> & <span class="color-contact">App/Web Dev</span></p>
-        <p class="terminal-text"><span class="terminal-info">Current GPA:</span> 4.0/4.0</p>
-        <p class="terminal-text"><span class="terminal-info">Location:</span> The United States</p>
-        <p class="terminal-text"><span class="terminal-info">Status:</span> College Freshman at <span class="color-contact">University of Michigan</span></p>
-        <p class="terminal-text"><span class="terminal-info">Languages:</span> <span class="color-contact">English</span> (Fluent), <span class="color-contact">Hindi</span> (Fluent), <span class="color-contact">French</span> (Intermediate), <span class="color-contact">Punjabi</span> (Intermediate), <span class="color-contact">Latin</span> (Intermediate)</p>
-        
-        <div class="terminal-flex flex-wrap gap-4 mt-6">
-          <a href="#contact" class="terminal-button">Connect</a>
-          <button id="open-terminal" class="terminal-button">Interactive Terminal</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Education Section -->
-  <section id="education" class="terminal-section">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="terminal-title color-contact">ACADEMICS</h2>
+<Layout title="AYUSH MADHAV KUMAR - Software Developer">
+  <div class="min-h-screen bg-white p-4 md:p-6 lg:p-8">
+    <div class="max-w-7xl mx-auto">
       
-              <div class="terminal-card">
-          <h3 class="terminal-highlight color-contact">University of Michigan</h3>
-                  <p class="terminal-text"><span class="terminal-info">Degree:</span> <span class="color-contact">Computer Science</span></p>
-          <p class="terminal-text"><span class="terminal-info">College:</span> College of Engineering</p>
-          <p class="terminal-text"><span class="terminal-info">Status:</span> Current Student (Freshman)</p>
-          <p class="terminal-text"><span class="terminal-info">Duration:</span> 2025 - Present</p>
-          <p class="terminal-text"><span class="terminal-info">Location:</span> Ann Arbor, Michigan, USA</p>
-      </div>
-
-              <div class="terminal-card">
-          <h3 class="terminal-highlight color-contact">Douglas Community School (Irish Leaving Certificate)</h3>
-                  <p class="terminal-text"><span class="terminal-info">Current GPA:</span> 4.0</p>
-          <p class="terminal-text"><span class="terminal-info">Duration:</span> 2023 - 2025</p>
-          <p class="terminal-text"><span class="terminal-info">Predicted:</span> H1 (100 points) in <span class="color-contact">Mathematics</span>, <span class="color-contact">Physics</span>, <span class="color-contact">Chemistry</span>, <span class="color-contact">Accounting</span>, <span class="color-contact">English</span>, <span class="color-contact">Applied Mathematics</span></p>
-          <p class="terminal-text"><span class="terminal-info">H2 (88 points):</span> French</p>
-          <p class="terminal-text"><span class="terminal-info">IMO Training:</span> Selected for <span class="color-skills">UCC (University College Cork)</span> bi-weekly advanced training for global representation</p>
-          <p class="terminal-text"><span class="terminal-info">Achievement:</span> <span class="color-skills">IrMO Finalist</span> (2023), Ranked top 10</p>
-      </div>
-
-              <div class="terminal-card">
-          <h3 class="terminal-highlight color-contact">Global Indian International School (CBSE)</h3>
-                  <p class="terminal-text"><span class="terminal-info">GPA:</span> 10/10 Unweighted</p>
-          <p class="terminal-text"><span class="terminal-info">Achievement:</span> Perfect academic record</p>
-          <p class="terminal-text"><span class="terminal-info">Scholarship:</span> <span class="color-contact">FIITJEE</span> 90% Scholarship recipient</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Experience Section -->
-  <section id="experience" class="terminal-section">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="terminal-title color-skills">EXPERIENCE</h2>
-      
-              <div class="terminal-card">
-          <h3 class="terminal-highlight color-skills">Associate Intern - GIIT Solutions</h3>
-                  <p class="terminal-text"><span class="terminal-info">Period:</span> Summer 2024 & April 2025</p>
-          <p class="terminal-text"><span class="terminal-info">Tasks:</span></p>
-          <ul class="terminal-text ml-6">
-            <li>• <span class="color-skills">CI/CD</span> based deployment on <span class="color-skills">AWS</span> cloud infrastructure</li>
-            <li>• <span class="color-skills">Python</span> scripting for automation and data processing</li>
-            <li>• Internal projects with enhanced deployment strategies</li>
-            <li>• Collaboration with development teams on cloud solutions</li>
-          </ul>
-      </div>
-
-              <div class="terminal-card">
-          <h3 class="terminal-highlight color-skills">Entrepreneurship Accelerator Intern - DogPatch Labs</h3>
-                  <p class="terminal-text"><span class="terminal-info">Duration:</span> 7-week intensive program in Dublin</p>
-          <p class="terminal-text"><span class="terminal-info">Activities:</span></p>
-          <ul class="terminal-text ml-6">
-            <li>• Intensive <span class="color-skills">entrepreneurship</span> accelerator program</li>
-            <li>• <span class="color-skills">Business model</span> development and startup strategies</li>
-            <li>• <span class="color-skills">Networking</span> with industry professionals and mentors</li>
-            <li>• <span class="color-skills">Presentation</span> of innovative solutions to real-world challenges</li>
-          </ul>
-      </div>
-
-              <div class="terminal-card">
-          <h3 class="terminal-highlight color-skills">Wearable Technology Developer - CareTether</h3>
-                  <p class="terminal-text"><span class="terminal-info">Project:</span> Healthcare technology startup</p>
-          <p class="terminal-text"><span class="terminal-info">Development:</span></p>
-          <ul class="terminal-text ml-6">
-            <li>• <span class="color-skills">Wearable app</span> and device system for elderly with cognitive difficulties</li>
-            <li>• <span class="color-skills">Hardware and software</span> integration for healthcare monitoring</li>
-            <li>• <span class="color-skills">User experience</span> and accessibility for vulnerable populations</li>
-            <li>• <span class="color-skills">Collaboration</span> with healthcare professionals on requirements</li>
-          </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Research Section -->
-  <section id="research" class="terminal-section">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="terminal-title color-skills">RESEARCH</h2>
-      
-              <div class="terminal-card">
-          <h3 class="terminal-highlight color-skills">Independent Research - Multiple Fields</h3>
-                  <p class="terminal-text"><span class="terminal-info">Mentor:</span> Neil Bronks, School Physics Teacher</p>
-          <p class="terminal-text"><span class="terminal-info">Papers:</span> 6 research papers in diverse scientific fields</p>
-          <p class="terminal-text"><span class="terminal-info">Fields:</span></p>
-          <ul class="terminal-text ml-6">
-            <li>• <span class="color-skills">Quantum Physics:</span> Quantum entanglement and secure communications</li>
-            <li>• <span class="color-skills">Astronomy:</span> Exoplanet detection, stellar wind impacts on habitability</li>
-            <li>• <span class="color-skills">Machine Learning:</span> Bitcoin price prediction algorithms</li>
-            <li>• <span class="color-skills">Game Theory:</span> Chess analysis and mental health impact of technology</li>
-          </ul>
-          <p class="terminal-text"><span class="terminal-info">Status:</span> Research commended by <span class="color-skills">UCC (University College Cork)</span> Physics professors</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects" class="terminal-section">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="terminal-title color-skills">PROJECTS</h2>
-      
-              <div class="terminal-card">
-          <h3 class="terminal-highlight color-skills">Environmental Solutions App</h3>
-        <p class="terminal-text"><span class="terminal-info">Conference:</span> Real World Challenges Conference, 9th Grade</p>
-        <p class="terminal-text"><span class="terminal-info">Purpose:</span> Climate change solutions app</p>
-        <p class="terminal-text"><span class="terminal-info">Features:</span></p>
-        <ul class="terminal-text ml-6">
-          <li>• Comprehensive climate change issue addressing</li>
-          <li>• Waste management and energy conservation solutions</li>
-          <li>• International conference presentation</li>
-          <li>• Mobile app development and environmental science integration</li>
-        </ul>
-      </div>
-
-              <div class="terminal-card">
-          <h3 class="terminal-highlight color-skills">Earth's Radius Calculation</h3>
-        <p class="terminal-text"><span class="terminal-info">Event:</span> GSE One Conference - Global Collaboration</p>
-        <p class="terminal-text"><span class="terminal-info">Method:</span> Astronomical observations and mathematical principles</p>
-        <p class="terminal-text"><span class="terminal-info">Achievement:</span></p>
-        <ul class="terminal-text ml-6">
-          <li>• Global team collaboration using astronomical observations</li>
-          <li>• Mathematical and astronomical principles application</li>
-          <li>• International scientific conference presentation</li>
-          <li>• Astronomy, Mathematics, and Scientific Collaboration</li>
-        </ul>
-      </div>
-
-              <div class="terminal-card">
-          <h3 class="terminal-highlight color-skills">IMO Training Program</h3>
-        <p class="terminal-text"><span class="terminal-info">Program:</span> <span class="color-skills">UCC (University College Cork)</span> IMO Training</p>
-        <p class="terminal-text"><span class="terminal-info">Selection:</span> Weekly advanced mathematics classes at <span class="color-skills">UCC (University College Cork)</span></p>
-        <p class="terminal-text"><span class="terminal-info">Training:</span></p>
-        <ul class="terminal-text ml-6">
-          <li>• Selective bi-weekly advanced IMO training</li>
-          <li>• Global mathematical olympiad representation preparation</li>
-          <li>• Focus areas: Number Theory, Algebra, Geometry, Combinatorics</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Skills Section -->
-  <section id="skills" class="terminal-section">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="terminal-title color-skills">SKILLS</h2>
-      <div class="terminal-grid md:grid-cols-3 gap-6">
-        <div class="terminal-card text-center">
-          <h3 class="terminal-highlight mb-4 color-skills">Programming Languages</h3>
-          <div class="terminal-text space-y-2">
-            <p><span class="color-skills">Python</span> (Advanced)</p>
-            <p><span class="color-skills">JavaScript/TypeScript</span></p>
-            <p><span class="color-skills">HTML & CSS</span></p>
-            <p><span class="color-skills">Java</span></p>
-            <p><span class="color-skills">C</span></p>
-            <p><span class="color-skills">C++</span></p>
-            <p><span class="color-skills">LaTeX</span></p>
-          </div>
-        </div>
-        <div class="terminal-card text-center md:col-span-2">
-          <h3 class="terminal-highlight mb-4 color-skills">Tools & Technologies</h3>
-          <div class="terminal-grid md:grid-cols-2 gap-4">
-            <div class="terminal-text space-y-2">
-              <p><span class="color-skills">AWS Cloud Services</span></p>
-              <p><span class="color-skills">Git</span></p>
-              <p><span class="color-skills">GitHub</span></p>
-              <p><span class="color-skills">CI/CD</span></p>
-              <p><span class="color-skills">Machine Learning</span></p>
-              <p><span class="color-skills">Data Analysis</span></p>
-              <p><span class="color-skills">MATLAB</span></p>
-            </div>
-            <div class="terminal-text space-y-2">
-              <p><span class="color-skills">PLUTO</span> (Astrophysics)</p>
-              <p><span class="color-skills">Stockfish</span> (Chess AI)</p>
-              <p><span class="color-skills">Wolfram Mathematica</span></p>
-              <p><span class="color-skills">Scientific Computing</span></p>
-              <p><span class="color-skills">Research Tools</span></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Awards Section -->
-  <section id="awards" class="terminal-section">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="terminal-title color-leadership">ACHIEVEMENTS</h2>
-      <div class="terminal-grid md:grid-cols-2 gap-6">
-        <div class="terminal-card">
-          <h3 class="terminal-highlight mb-4 color-leadership">Academic Excellence</h3>
-          <div class="terminal-text space-y-3">
-            <p><span class="terminal-info">Royal Society of Chemistry:</span> Top 25 in Chemistry on the Island of Ireland (2025)</p>
-            <p><span class="terminal-info">FIITJEE Scholarship:</span> 90% Scholarship, premier JEE prep institute</p>
-            <p><span class="terminal-info">IrEOES Physics Olympiad:</span> Finalist (2023), Ranked top 10</p>
-            <p><span class="terminal-info">Irish Chemistry Olympiad:</span> Qualified (2024)</p>
-          </div>
-        </div>
-        <div class="terminal-card">
-          <h3 class="terminal-highlight mb-4 color-leadership">Competition Achievements</h3>
-          <div class="terminal-text space-y-3">
-            <p><span class="terminal-info">SOF International English Olympiad:</span> 2nd Place International (2024)</p>
-            <p><span class="terminal-info">SOF Social Science Olympiad:</span> Regional Winner (2024)</p>
-            <p><span class="terminal-info">SOF General Knowledge Olympiad:</span> 1st Place Regional (2024)</p>
-            <p><span class="terminal-info">Bank of Ireland Quiz:</span> 3rd Place Nationally</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Leadership Section -->
-  <section id="leadership" class="terminal-section">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="terminal-title color-leadership">LEADERSHIP</h2>
-      
-              <div class="terminal-card">
-          <h3 class="terminal-highlight color-leadership">President, Coding Club</h3>
-        <p class="terminal-text"><span class="terminal-info">Organization:</span> Douglas Community School</p>
-        <p class="terminal-text"><span class="terminal-info">Duration:</span> 2023 - 2025</p>
-        <p class="terminal-text"><span class="terminal-info">Responsibilities:</span></p>
-        <ul class="terminal-text ml-6">
-          <li>• Directed coding workshops teaching HTML and Python to younger students</li>
-          <li>• Organized and hosted coding competitions fostering programming community</li>
-          <li>• Mentored students in software development and problem-solving</li>
-        </ul>
-      </div>
-
-              <div class="terminal-card">
-          <h3 class="terminal-highlight color-leadership">President, Chess Club</h3>
-        <p class="terminal-text"><span class="terminal-info">Organization:</span> Douglas Community School</p>
-        <p class="terminal-text"><span class="terminal-info">Duration:</span> 2023 - 2025</p>
-        <p class="terminal-text"><span class="terminal-info">Achievements:</span></p>
-        <ul class="terminal-text ml-6">
-          <li>• Managed club activities and led team to national-level tournaments</li>
-          <li>• Achieved personal best 6/6 record in chess tournaments</li>
-          <li>• Organized strategic training sessions and competitive events</li>
-        </ul>
-      </div>
-
-              <div class="terminal-card">
-          <h3 class="terminal-highlight color-leadership">Student Council Leader & Green Schools Representative</h3>
-        <p class="terminal-text"><span class="terminal-info">Organization:</span> Douglas Community School</p>
-        <p class="terminal-text"><span class="terminal-info">Duration:</span> 2023 - 2025</p>
-        <p class="terminal-text"><span class="terminal-info">Initiatives:</span></p>
-        <ul class="terminal-text ml-6">
-          <li>• Key role in reinstating school library and setting up student forums</li>
-          <li>• Leading bike shed installation for school-wide green travel initiative</li>
-          <li>• Participated in eco-initiatives promoting sustainable transportation</li>
-        </ul>
-      </div>
-
-              <div class="terminal-card">
-          <h3 class="terminal-highlight color-leadership">Debate Club Leader & MUN Co-Chair</h3>
-        <p class="terminal-text"><span class="terminal-info">Level:</span> International</p>
-        <p class="terminal-text"><span class="terminal-info">Duration:</span> 2021 - 2025</p>
-        <p class="terminal-text"><span class="terminal-info">Achievements:</span></p>
-        <ul class="terminal-text ml-6">
-          <li>• Multiple MUN conference victories and Best Speaker awards</li>
-          <li>• Quality Control Presentation: 2nd Place in Asia</li>
-          <li>• Co-Chaired International Davis College MUN</li>
-          <li>• <span class="color-skills">UCC (University College Cork)</span> Philosophy Debate: Regional winner focusing on ethics and societal issues</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="terminal-section">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="terminal-title color-contact">CONTACT</h2>
-      <div class="terminal-text text-center mb-8">
-        <p class="text-lg max-w-2xl mx-auto">
-          I'm always interested in discussing research opportunities, academic collaborations, or innovative projects. 
-          Feel free to reach out through any of the channels below.
+      {/* Header Section */}
+      <div class="mb-6 lg:mb-8 text-center">
+        <div class="bg-blue-600 h-2 w-24 mb-4 mx-auto"></div>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl tracking-tight text-black">
+          AYUSH MADHAV KUMAR
+        </h1>
+        <p class="text-lg md:text-xl lg:text-2xl text-gray-600 mt-2">
+          Software Developer
         </p>
       </div>
-      <div class="terminal-grid md:grid-cols-3 gap-6 mb-8">
-        <div class="terminal-card text-center">
-          <h3 class="terminal-highlight mb-2 color-contact">Email</h3>
-          <a href="mailto:contactayushmadhav@gmail.com" class="terminal-button">contactayushmadhav@gmail.com</a>
-          <p class="terminal-text text-sm mt-2">Primary contact method</p>
+
+      {/* Main Content Grid */}
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 lg:gap-6 lg:h-96">
+        
+        {/* About Me Section */}
+        <div class="bg-blue-600 text-white p-4 md:p-6 border-4 border-black flex flex-col">
+          <div class="bg-white h-1 w-16 mb-3"></div>
+          <h2 class="text-xl md:text-2xl mb-3">About Me</h2>
+          <div class="space-y-3 text-blue-100 flex-1">
+            <p>
+              Passionate software developer with expertise in modern web technologies 
+              and machine learning. I love building innovative solutions that solve 
+              real-world problems.
+            </p>
+            <p>
+              Currently focused on cybersecurity and exploring the intersection 
+              of AI and cybersecurity. Always eager to talk to people, learn new technologies and 
+              contribute to open source projects.
+            </p>
+          </div>
         </div>
-        <div class="terminal-card text-center">
-          <h3 class="terminal-highlight mb-2 color-contact">GitHub</h3>
-          <a href="https://github.com/FriedOkra1" class="terminal-button">FriedOkra1</a>
-          <p class="terminal-text text-sm mt-2">Code repositories</p>
+
+        {/* Interests Section */}
+        <div class="bg-gray-50 p-4 md:p-6 border-4 border-black flex flex-col">
+          <div class="bg-blue-600 h-1 w-16 mb-3"></div>
+          <h2 class="text-xl md:text-2xl mb-3 text-black">My Interests</h2>
+          <div class="grid grid-cols-1 gap-2 flex-1 content-start">
+            {interests.map((interest) => (
+              <div 
+                class="bg-white text-black p-2 border-2 border-black transform hover:translate-x-1 hover:translate-y-1 transition-transform duration-200"
+              >
+                <span class="block text-sm">{interest}</span>
+              </div>
+            ))}
+          </div>
         </div>
-        <div class="terminal-card text-center">
-          <h3 class="terminal-highlight mb-2 color-contact">LinkedIn</h3>
-          <a href="https://www.linkedin.com/in/ayush-madhav-kumar-848060206/" class="terminal-button">LinkedIn Profile</a>
-          <p class="terminal-text text-sm mt-2">Professional network</p>
+
+        {/* Social Links Section */}
+        <div class="bg-blue-600 text-white p-4 md:p-6 border-4 border-black flex flex-col">
+          <div class="bg-white h-1 w-16 mb-3"></div>
+          <h2 class="text-xl md:text-2xl mb-3">Connect</h2>
+          <div class="space-y-2 flex-1">
+            {socialLinks.map((link) => (
+              <a
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center space-x-3 p-3 bg-white text-black border-2 border-black hover:bg-gray-100 transition-colors duration-200 group"
+              >
+                <div class="w-5 h-5 flex-shrink-0">
+                  {link.icon === 'github' && (
+                    <svg fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                  )}
+                  {link.icon === 'linkedin' && (
+                    <svg fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                  )}
+                  {link.icon === 'email' && (
+                    <svg fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                  )}
+                </div>
+                <div class="min-w-0 flex-1">
+                  <div class="text-sm truncate">
+                    {link.name}
+                  </div>
+                  <div class="text-xs text-gray-600 truncate">
+                    {link.label}
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
-      </div>
-      <div class="terminal-card text-center">
-        <p class="terminal-text text-lg">
-          <span class="terminal-highlight">Currently seeking:</span> <span class="color-contact">Research opportunities</span> in Astrophysics and Physics, 
-          <span class="color-contact">Academic collaborations</span>, <span class="color-contact">International competitions</span>, and <span class="color-contact">innovative technology projects</span>.
-        </p>
+
+        {/* Resume Section */}
+        <div class="bg-gray-50 p-4 md:p-6 border-4 border-black flex flex-col">
+          <div class="bg-blue-600 h-1 w-16 mb-3"></div>
+          <h2 class="text-xl md:text-2xl mb-3 text-black">Resume</h2>
+          
+          {/* Embedded PDF */}
+          <div class="flex-1 border-2 border-gray-300 rounded overflow-hidden mb-3">
+            <iframe
+              src={`${documents[0].url}#toolbar=0&navpanes=0&scrollbar=0&view=FitH`}
+              class="w-full h-full min-h-80"
+              title="Ayush Madhav Kumar Resume"
+            ></iframe>
+          </div>
+          
+          {/* Full Resume Button */}
+          <a
+            href={documents[0].url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full bg-blue-600 text-white py-2 px-4 border-2 border-black hover:bg-blue-700 hover:translate-x-1 hover:translate-y-1 transition-all duration-200 text-center font-medium text-sm"
+          >
+            Open Resume
+          </a>
+        </div>
+
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- Terminal CLI Component -->
-  <TerminalCLI />
-
-  <script>
-    // Make the open_terminal button functional
-    document.addEventListener('DOMContentLoaded', () => {
-      const openTerminalBtn = document.getElementById('open-terminal');
-      if (openTerminalBtn) {
-        openTerminalBtn.addEventListener('click', () => {
-          // Trigger the terminal to open
-          const terminalContainer = document.querySelector('.terminal-cli-container');
-          if (terminalContainer) {
-            terminalContainer.classList.add('show');
-            // Focus on the terminal input
-            const terminalInput = terminalContainer.querySelector('.terminal-cli-input') as HTMLInputElement;
-            if (terminalInput) {
-              terminalInput.focus();
-            }
-          }
-        });
-      }
-    });
-  </script>
 </Layout>

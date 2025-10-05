@@ -1,159 +1,25 @@
 ---
-import '../styles/global.css';
 export interface Props {
   title: string;
-  description?: string;
 }
 
-const { title, description = "Welcome to my portfolio website" } = Astro.props;
+const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content={description} />
+    <meta name="description" content="Ayush Madhav Kumar - Software Developer & AI Enthusiast" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
   <body>
-    <!-- BB-8 Theme Toggle -->
-    <label class="bb8-toggle" for="bb8-toggle">
-      <input type="checkbox" id="bb8-toggle" class="bb8-toggle__checkbox">
-      <div class="bb8-toggle__container">
-        <div class="bb8-toggle__scenery">
-          <div class="bb8-toggle__cloud"></div>
-          <div class="bb8-toggle__cloud"></div>
-          <div class="bb8-toggle__cloud"></div>
-          <div class="gomrassen"></div>
-          <div class="hermes"></div>
-          <div class="chenini"></div>
-          <div class="tatto-1"></div>
-          <div class="tatto-2"></div>
-          <div class="bb8-toggle__star"></div>
-          <div class="bb8-toggle__star"></div>
-          <div class="bb8-toggle__star"></div>
-          <div class="bb8-toggle__star"></div>
-          <div class="bb8-toggle__star"></div>
-          <div class="bb8-toggle__star"></div>
-          <div class="bb8-toggle__star"></div>
-        </div>
-        <div class="bb8">
-          <div class="bb8__head-container">
-            <div class="bb8__head">
-              <div class="bb8__antenna"></div>
-              <div class="bb8__antenna"></div>
-            </div>
-          </div>
-          <div class="bb8__body"></div>
-        </div>
-        <div class="bb8__shadow"></div>
-      </div>
-    </label>
-
-
-    
-    <!-- Terminal Header -->
-    <header class="terminal-header py-4">
-      <div class="max-w-6xl mx-auto px-4">
-        <div class="text-center">
-          <h1 class="terminal-title text-3xl mb-2">AYUSH MADHAV KUMAR</h1>
-          <p class="terminal-text text-lg">Terminal Portfolio</p>
-        </div>
-      </div>
-    </header>
-
-    <!-- Terminal Navigation -->
-    <nav class="terminal-nav">
-      <div class="max-w-6xl mx-auto px-4">
-        <div class="terminal-flex flex-wrap justify-center gap-8">
-          <!-- Personal Dropdown -->
-          <div class="dropdown-container">
-            <a href="#about" class="terminal-link font-bold color-contact dropdown-trigger">PERSONAL</a>
-            <div class="dropdown-menu">
-              <a href="/" class="dropdown-item color-contact">HOME</a>
-              <a href="#about" class="dropdown-item color-contact">ABOUT</a>
-              <a href="#education" class="dropdown-item color-contact">ACADEMICS</a>
-              <a href="#contact" class="dropdown-item color-contact">CONTACT</a>
-            </div>
-          </div>
-          
-          <!-- Professional Dropdown -->
-          <div class="dropdown-container">
-            <a href="#experience" class="terminal-link font-bold color-skills dropdown-trigger">PROFESSIONAL</a>
-            <div class="dropdown-menu">
-              <a href="#experience" class="dropdown-item color-skills">EXPERIENCE</a>
-              <a href="#research" class="dropdown-item color-skills">RESEARCH</a>
-              <a href="#projects" class="dropdown-item color-skills">PROJECTS</a>
-              <a href="#skills" class="dropdown-item color-skills">SKILLS</a>
-            </div>
-          </div>
-          
-          <!-- Achievements Dropdown -->
-          <div class="dropdown-container">
-            <a href="#awards" class="terminal-link font-bold color-leadership dropdown-trigger">ACHIEVEMENTS</a>
-            <div class="dropdown-menu">
-              <a href="#awards" class="dropdown-item color-leadership">ACHIEVEMENTS</a>
-              <a href="#leadership" class="dropdown-item color-leadership">LEADERSHIP</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
-
-    <main class="terminal-scroll">
-      <slot />
-    </main>
-
-    <!-- Terminal Footer -->
-    <footer class="terminal-header py-4 mt-8">
-      <div class="max-w-6xl mx-auto px-4 text-center">
-        <p class="terminal-text">Portfolio Status: <span class="terminal-success">ACTIVE</span></p>
-        <p class="terminal-text text-sm">Last updated: <span class="terminal-highlight">2025</span></p>
-      </div>
-    </footer>
-
-    <script>
-      // Theme toggle functionality
-      document.addEventListener('DOMContentLoaded', () => {
-        const bb8Toggle = document.getElementById('bb8-toggle');
-        const body = document.body;
-        
-        // Check for saved theme preference or default to light mode
-        const savedTheme = localStorage.getItem('theme') || 'light';
-        body.classList.toggle('dark', savedTheme === 'dark');
-        if (bb8Toggle) {
-          bb8Toggle.checked = savedTheme === 'dark';
-        }
-        
-        // BB-8 theme toggle event listener
-        bb8Toggle?.addEventListener('change', () => {
-          const isDark = bb8Toggle.checked;
-          body.classList.toggle('dark', isDark);
-          localStorage.setItem('theme', isDark ? 'dark' : 'light');
-        });
-      });
-
-      // Terminal-style smooth scrolling
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', (e) => {
-          e.preventDefault();
-          const href = anchor.getAttribute('href');
-          if (href) {
-            const target = document.querySelector(href);
-            if (target) {
-              target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-              });
-            }
-          }
-        });
-      });
-
-
-    </script>
+    <slot />
   </body>
 </html>
+
+<style is:global>
+  @import '../styles/global.css';
+</style>
